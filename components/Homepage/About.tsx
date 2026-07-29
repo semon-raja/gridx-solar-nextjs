@@ -54,11 +54,25 @@ export default function About() {
                   
                     <div className={styles.aboutBadges}>
                         <div className={styles.aboutBadge}>
-                            <span className={styles.aboutBadgeIcon}>✓</span>
+                            <div className={styles.aboutBadgeIcon}>
+                                <Image
+                                    src="/images/Homepage/verified.png"
+                                    alt="BBB+ Rated"
+                                    width={18}
+                                    height={18}
+                                />
+                            </div>
                             <span>BBB+ Rated</span>
                         </div>
                         <div className={styles.aboutBadge}>
-                            <span className={styles.aboutBadgeIcon}>✓</span>
+                            <div className={styles.aboutBadgeIcon}>
+                                <Image
+                                    src="/images/Homepage/leaf.png"
+                                    alt="GIZ PV Port Certified"
+                                    width={18}
+                                    height={18}
+                                />
+                            </div>
                             <span>GIZ PV Port Certified</span>
                         </div>
                     </div>

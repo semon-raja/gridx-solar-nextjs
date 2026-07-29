@@ -1,0 +1,353 @@
+.container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+/* ============================================================
+   BANNER SECTION
+   ============================================================ */
+
+.banner {
+    position: relative;
+    height: 614px;
+
+    background-image: url("/images/About/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 100px;
+}
+
+.bannerOverlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(19, 19, 19, 0.95) 0%,
+        rgba(19, 19, 19, 0.60) 45%,
+        rgba(19, 19, 19, 0) 100%
+    );
+}
+
+.banner .container {
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+
+
+.bannerTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: -1.44px;
+    color: #E5E2E1;
+
+    margin: 0;
+}
+
+.bannerTitle span {
+    font-family: var(--font-space-grotesk);
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: -1.44px;
+    color: #FFB800;
+}
+
+.bannerDescription {
+    font-family: var(--font-hanken-grotesk);
+    margin-top: 24px;
+    font-size: 20px;
+    line-height: 28px;
+
+    color: #D5C4AB;
+}
+
+
+/* ============================================================
+   OUR JOURNEY SECTION
+   ============================================================ */
+
+.ourJourney {
+    background-color: #111111;
+    padding: 60px 0;
+}
+
+.ourJourneyInner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+}
+
+/* ── Left: Text Content ── */
+.ourJourneyContent {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ourJourneyLabel {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #FFB800;
+    margin: 0 0 16px 0;
+}
+
+.ourJourneyTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.84px;
+    color: #E5E2E1;
+    margin: 0 0 20px 0;
+}
+
+.ourJourneyText {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 15px;
+    line-height: 1.7;
+    color: #A89B8A;
+    margin: 0 0 16px 0;
+}
+
+.ourJourneyText:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Right: Image ── */
+.ourJourneyImageWrapper {
+    flex: 0 0 560px;
+    height: 340px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.ourJourneyImage {
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .ourJourneyInner {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .ourJourneyImageWrapper {
+        flex: none;
+        width: 100%;
+        height: 260px;
+    }
+
+    .ourJourneyTitle {
+        font-size: 32px;
+    }
+}
+
+
+/* ============================================================
+   VISION & MISSION SECTION
+   ============================================================ */
+
+.visionMission {
+    background-color: #0E0E0E;
+    padding: 80px 0;
+}
+
+.visionMissionGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+/* ── Card ── */
+.vmCard {
+    background-color: #181818;
+    border-radius: 8px;
+    padding: 40px 36px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: background-color 0.25s ease;
+}
+
+.vmCard:hover {
+    background-color: #1f1f1f;
+}
+
+/* ── Icon circle ── */
+.vmIconWrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: rgba(255, 184, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.vmIcon {
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* ── Card title ── */
+.vmCardTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: #E5E2E1;
+    margin: 0 0 16px 0;
+}
+
+/* ── Card body text ── */
+.vmCardText {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 15px;
+    line-height: 1.75;
+    color: #A89B8A;
+    margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .visionMissionGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .vmCard {
+        padding: 32px 24px 36px;
+    }
+
+    .vmCardTitle {
+        font-size: 22px;
+    }
+}
+
+
+/* ============================================================
+   STATS COUNTER STRIP
+   ============================================================ */
+
+.statsStrip {
+    background-color: #0E0E0E;
+    border-top: 1px solid rgba(81, 69, 50, 0.35);
+    border-bottom: 1px solid rgba(81, 69, 50, 0.35);
+    padding: 64px 0;
+}
+
+.statsRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+}
+
+/* ── Each stat cell ── */
+.statItem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+/* Vertical pipe divider between cells */
+.statItem:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 52px;
+    background-color: rgba(81, 69, 50, 0.40);
+}
+
+/* ── Stat number ── */
+.statValue {
+    font-family: var(--font-space-grotesk);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.8px;
+    color: #FFB800;
+}
+
+/* ── Stat label ── */
+.statLabel {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #7A6E62;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .statsRow {
+        flex-wrap: wrap;
+        gap: 40px 0;
+    }
+
+    .statItem {
+        flex: 0 0 50%;
+    }
+
+    .statItem:not(:last-child)::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .statItem {
+        flex: 0 0 100%;
+    }
+
+    .statValue {
+        font-size: 32px;
+    }
+}

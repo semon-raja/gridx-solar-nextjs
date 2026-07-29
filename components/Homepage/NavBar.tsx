@@ -3,10 +3,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from "./page.module.css";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const pathname = usePathname();
+
+    const navLinks = [
+        { href: "/",         label: "Home",     exact: true  },
+        { href: "/About",    label: "About",    exact: true  },
+        { href: "/Services", label: "Services", exact: false },
+        { href: "/Projects", label: "Projects", exact: false },
+        { href: "/Partners", label: "Partners", exact: false },
+        { href: "/News",     label: "News",     exact: false },
+    ];
 
     return (
         <>
@@ -24,12 +35,21 @@ export default function Navbar() {
                     {/* Desktop nav links */}
                     <div className={styles.navbar_menu}>
                         <ul className={styles.navbar_links}>
-                            <li><Link href="/">Home</Link></li>
-                            <li><Link href="/">About</Link></li>
-                            <li><Link href="/">Services</Link></li>
-                            <li><Link href="/">Projects</Link></li>
-                            <li><Link href="/">Partners</Link></li>
-                            <li><Link href="/">News</Link></li>
+                            {navLinks.map((link) => {
+                                const isActive = link.exact
+                                    ? pathname === link.href
+                                    : pathname.startsWith(link.href);
+                                return (
+                                    <li key={link.label}>
+                                        <Link
+                                            href={link.href}
+                                            className={isActive ? styles.activeLink : ''}
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
 
@@ -76,7 +96,7 @@ export default function Navbar() {
             <div className={`${styles.mobileMenu} ${menuOpen ? styles.open : ''}`}>
                 <div className={styles.mobileMenuLinks}>
                     <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-                    <Link href="/" onClick={() => setMenuOpen(false)}>About</Link>
+                    <Link href="/About" onClick={() => setMenuOpen(false)}>About</Link>
                     <Link href="/" onClick={() => setMenuOpen(false)}>Services</Link>
                     <Link href="/" onClick={() => setMenuOpen(false)}>Projects</Link>
                     <Link href="/" onClick={() => setMenuOpen(false)}>Partners</Link>

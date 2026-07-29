@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from "./page.module.css";
 
 export default function Hero(){
@@ -21,7 +22,14 @@ export default function Hero(){
                     </p>
 
                     <button className={styles.heroButton} suppressHydrationWarning>
-                        Explore Projects →
+                        Explore Projects
+                        <Image
+                            src="/images/Homepage/arrow.png"
+                            alt="arrow"
+                            width={16}
+                            height={16}
+                            className={styles.heroButtonArrow}
+                        />
                     </button>
 
                 </div>

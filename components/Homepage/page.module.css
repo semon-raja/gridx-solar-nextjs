@@ -77,6 +77,12 @@
     border-bottom-color: #FFDCA1;
 }
 
+/* Active nav link — applied via className in NavBar.tsx */
+.navbar_links a.activeLink {
+    color: #FFDCA1;
+    border-bottom-color: #FFDCA1;
+}
+
 .navbar_rightSide {
     display: flex;
     align-items: center;
@@ -178,6 +184,8 @@
 }
 
 .heroTitle {
+    font-family: var(--space-grotesk);
+    font-style: Bold;
     font-size: 72px;
     font-weight: 700;
     line-height: 80px;
@@ -187,11 +195,12 @@
 }
 
 .heroDescription {
+    font-family: var(--font-hanken-grotesk);
     max-width: 630px;
     font-size: 20px;
     font-weight: 400;
     line-height: 28px;
-    color: #E5E2E1;
+    color: #D5C4AB;
     margin: 0 0 36px 0;
 }
 
@@ -208,10 +217,12 @@
     border-radius: 12px;
 
     background: #FFB800;
-    color: #1a1100;
-
+    color: #6B4C00;
+    
+    font-family: var(--font-hanken-grotesk);
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
+    line-height: 24px;
 
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
@@ -220,6 +231,12 @@
 .heroButton:hover {
     background: #f3aa00;
     transform: translateY(-1px);
+}
+
+.heroButtonArrow {
+    display: block;
+    flex-shrink: 0;
+    object-fit: contain;
 }
 
 
@@ -272,7 +289,7 @@
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.5px;
-    color: #FFB800;
+    color: #E5E2E1;
 }
 
 .statLabel {
@@ -290,7 +307,7 @@
    /* ABOUT SECTION */
 
 .aboutSection {
-    padding: 128px 0;
+    padding: 80px 0 100px;
     background: #000000;
 }
 
@@ -414,15 +431,9 @@
 .aboutBadgeIcon {
     width: 22px;
     height: 22px;
-    border-radius: 50%;
-    background: rgba(255, 184, 0, 0.15);
-    border: 1px solid rgba(255, 184, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFB800;
-    font-size: 13px;
-    font-weight: 700;
     flex-shrink: 0;
 }
 /* ============================================================
@@ -430,7 +441,7 @@
    ============================================================ */
 
 .solutions {
-    padding: 120px 0;
+    padding: 80px 0;
 }
 .solutionsContent {
     width: 100%;
@@ -744,7 +755,7 @@
    ============================================================ */
 
 .starcSection {
-    padding: 20px 0;
+    padding: 20px 0 60px;
 }
 
 .starcCard {
@@ -846,7 +857,7 @@
    ============================================================ */
 
 .portfolioSection {
-    padding: 120px 0;
+    padding: 80px 0;
 }
 
 
@@ -901,6 +912,12 @@
     line-height: 20px;
 
     cursor: pointer;
+    border-radius: 999px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.tab:hover {
+    color: #FFDCA1;
 }
 .activeTab {
     font-family: var(--font-hanken-grotesk);
@@ -920,6 +937,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    animation: fadeInGrid 0.35s ease;
+}
+
+@keyframes fadeInGrid {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0);    }
 }
 
 .projectCard {
@@ -1222,8 +1245,11 @@
     padding-top:24px;
     border-top:1px solid rgba(255,255,255,.08);
     text-align:center;
-    color:#8A8A8A;
-    font-size:14px;
+    font-family: var(--font-hanken-grotesk);
+    font-weight: 400;
+    line-height: 20px;
+    color:#D5C4AB;
+    font-size: 18px;
 }
 
 /* ============================================================

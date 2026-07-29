@@ -15,7 +15,7 @@ export default function Solutions(){
                         </div>
 
                         <div className={styles.headingRight}>
-                            <p>View All Solutions →</p>
+                            <p>View All Services →</p>
                         </div>
 
                     </div>
