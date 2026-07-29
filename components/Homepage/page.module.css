@@ -275,8 +275,6 @@
     gap: 10px;
 
     height: 84px;
-    /* Figma VerticalBorder height */
-
     border-left: 1px solid rgba(81, 69, 50, 0.10);
 }
 
@@ -335,7 +333,6 @@
     border: 1px solid rgba(81, 69, 50, 0.10);
 }
 
-/* Net Zero overlay card — Figma: 320px wide, #353534, radius 16px, border 1px #514532 20%, padding 32px */
 .netZeroCard {
     position: absolute;
     bottom: -30px;
@@ -411,7 +408,6 @@
     margin: 0;
 }
 
-/* Certification badges — BBB+ Rated · GIZ PV Port Certified */
 .aboutBadges {
     display: flex;
     align-items: center;
@@ -500,7 +496,7 @@
 .solutionsGrid {
     display: flex;
     flex-direction: column;
-    gap: 24px; /* Adjust later */
+    gap: 24px;
 }
 
 .topRow {
@@ -577,7 +573,7 @@
 
 
 .scaleUp span {
-    font-family: var(--font-hanken-grotesk); /* or your font variable */
+    font-family: var(--font-hanken-grotesk); 
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
