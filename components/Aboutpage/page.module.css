@@ -14,12 +14,6 @@
 }
 
 
-
-
-
-
-
-
 /* ============================================================
    BANNER SECTION
    ============================================================ */
@@ -27,7 +21,6 @@
 .banner {
     position: relative;
     height: 614px;
-
     background-image: url("/images/About/banner.jpg");
     background-size: cover;
     background-position: center;
@@ -38,26 +31,19 @@
 .bannerOverlay {
     position: absolute;
     inset: 0;
-
-    background: linear-gradient(
-        90deg,
-        rgba(19, 19, 19, 0.95) 0%,
-        rgba(19, 19, 19, 0.60) 45%,
-        rgba(19, 19, 19, 0) 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(19, 19, 19, 0.95) 0%,
+            rgba(19, 19, 19, 0.60) 45%,
+            rgba(19, 19, 19, 0) 100%);
 }
 
 .banner .container {
     position: relative;
     z-index: 2;
-
     height: 100%;
-
     display: flex;
     align-items: center;
 }
-
-
 
 .bannerTitle {
     font-family: var(--font-space-grotesk);
@@ -66,7 +52,6 @@
     line-height: 72px;
     letter-spacing: -1.44px;
     color: #E5E2E1;
-
     margin: 0;
 }
 
@@ -84,7 +69,6 @@
     margin-top: 24px;
     font-size: 20px;
     line-height: 28px;
-
     color: #D5C4AB;
 }
 
@@ -95,7 +79,7 @@
 
 .ourJourney {
     background-color: #111111;
-    padding: 60px 0;
+    padding: 100px 0;
 }
 
 .ourJourneyInner {
@@ -116,68 +100,84 @@
 }
 
 .ourJourneyLabel {
-    font-family: var(--font-hanken-grotesk);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2.4px;
     text-transform: uppercase;
-    color: #FFB800;
+    color: #FFDCA1;
     margin: 0 0 16px 0;
 }
 
 .ourJourneyTitle {
     font-family: var(--font-space-grotesk);
-    font-size: 42px;
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.84px;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: 0px;
     color: #E5E2E1;
-    margin: 0 0 20px 0;
+    margin: 0 0 24px 0;
 }
 
 .ourJourneyText {
     font-family: var(--font-hanken-grotesk);
-    font-size: 15px;
-    line-height: 1.7;
-    color: #A89B8A;
-    margin: 0 0 16px 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #D5C4AB;
+    margin: 0 0 20px 0;
 }
 
 .ourJourneyText:last-child {
     margin-bottom: 0;
 }
 
-/* ── Right: Image ── */
-.ourJourneyImageWrapper {
+/* ── Right: Image Container ── */
+.ourJourneyImageContainer {
+    position: relative;
     flex: 0 0 560px;
     height: 340px;
+}
+
+/* Figma decorative borders (top-left & bottom-right) */
+.ourJourneyBorderTopLeft {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 96px;
+    height: 96px;
+    border-top: 2px solid rgba(255, 220, 161, 0.40);
+    border-left: 2px solid rgba(255, 220, 161, 0.40);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ourJourneyBorderBottomRight {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 96px;
+    height: 96px;
+    border-bottom: 2px solid rgba(255, 220, 161, 0.40);
+    border-right: 2px solid rgba(255, 220, 161, 0.40);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Rounded image container */
+.ourJourneyImageWrapper {
     position: relative;
-    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
     overflow: hidden;
+    z-index: 0;
 }
 
 .ourJourneyImage {
     object-fit: cover;
     object-position: center;
-}
-
-
-/* ── Responsive ── */
-@media (max-width: 900px) {
-    .ourJourneyInner {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .ourJourneyImageWrapper {
-        flex: none;
-        width: 100%;
-        height: 260px;
-    }
-
-    .ourJourneyTitle {
-        font-size: 32px;
-    }
 }
 
 
@@ -227,7 +227,6 @@
 
 .vmIcon {
     object-fit: contain;
-    border-radius: 50%;
 }
 
 /* ── Card title ── */
@@ -250,21 +249,6 @@
     margin: 0;
 }
 
-/* ── Responsive ── */
-@media (max-width: 768px) {
-    .visionMissionGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .vmCard {
-        padding: 32px 24px 36px;
-    }
-
-    .vmCardTitle {
-        font-size: 22px;
-    }
-}
-
 
 /* ============================================================
    STATS COUNTER STRIP
@@ -272,9 +256,9 @@
 
 .statsStrip {
     background-color: #0E0E0E;
-    border-top: 1px solid rgba(81, 69, 50, 0.35);
-    border-bottom: 1px solid rgba(81, 69, 50, 0.35);
-    padding: 64px 0;
+    border-top: 1px solid rgba(81, 69, 50, 0.10);
+    border-bottom: 1px solid rgba(81, 69, 50, 0.10);
+    padding: 80px 0;
 }
 
 .statsRow {
@@ -291,29 +275,16 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    position: relative;
-}
-
-/* Vertical pipe divider between cells */
-.statItem:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 52px;
-    background-color: rgba(81, 69, 50, 0.40);
 }
 
 /* ── Stat number ── */
 .statValue {
     font-family: var(--font-space-grotesk);
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.8px;
-    color: #FFB800;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: 0px;
+    color: #FFDCA1;
 }
 
 /* ── Stat label ── */
@@ -326,7 +297,757 @@
     color: #7A6E62;
 }
 
-/* ── Responsive ── */
+
+/* ============================================================
+   MILESTONE TIMELINE SECTION
+   ============================================================ */
+
+.milestoneSection {
+    background-color: #111111;
+    padding: 100px 0 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle background texture */
+.milestoneSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%,
+            rgba(255, 184, 0, 0.04) 0%,
+            transparent 70%);
+    pointer-events: none;
+}
+
+/* ── Header ── */
+.milestoneHeader {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.milestoneLabel {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #FFDCA1;
+    margin: 0 0 16px 0;
+}
+
+.milestoneTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: 0px;
+    color: #E5E2E1;
+    margin: 0;
+}
+
+/* ── Timeline wrapper ── */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ── One row (left + spine + right) ── */
+.timelineRow {
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    align-items: center;
+}
+
+/* ── Left side column ── */
+.timelineSideLeft {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 24px 0 0;
+}
+
+/* ── Right side column ── */
+.timelineSideRight {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0 0 24px;
+}
+
+/* ── Large year number ── */
+.timelineYear {
+    font-family: var(--font-space-grotesk);
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: -1.44px;
+    color: #FFBA20;
+    opacity: 0.25;
+    /* Muted gold background style in Figma */
+}
+
+/* right-side year: left-aligned */
+.timelineRowRight .timelineSideRight .timelineYear {
+    text-align: left;
+}
+
+/* left-side year: right-aligned */
+.timelineRowLeft .timelineSideLeft .timelineYear {
+    text-align: right;
+}
+
+/* ── Card ── */
+.timelineCard {
+    background-color: #181818;
+    border: 1px solid rgba(81, 69, 50, 0.25);
+    border-radius: 8px;
+    padding: 28px 32px 32px;
+    max-width: 480px;
+    width: 100%;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.timelineCard:hover {
+    background-color: #1d1d1d;
+    border-color: rgba(255, 184, 0, 0.20);
+}
+
+.timelineCardTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: #E5E2E1;
+    margin: 0 0 12px 0;
+}
+
+.timelineCardText {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #D5C4AB;
+    margin: 0;
+}
+
+/* ── Centre spine ── */
+.timelineSpine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    min-height: 200px;
+    z-index: 1;
+}
+
+/* Top line segment - sharp CSS line */
+.timelineLineTop {
+    flex: 1;
+    width: 2px;
+    background-color: rgba(255, 186, 32, 0.25);
+}
+
+/* Bottom line segment - sharp CSS line */
+.timelineLineBottom {
+    flex: 1;
+    width: 2px;
+    background-color: rgba(255, 186, 32, 0.25);
+}
+
+/* Circle node */
+.timelineNodeWrapper {
+    width: 44px;
+    height: 44px;
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timelineNode {
+    object-fit: contain;
+}
+
+
+/* ============================================================
+   ACCOLADES & RECOGNITION SECTION
+   ============================================================ */
+
+.accoladesSection {
+    background-color: #0E0E0E;
+    padding: 100px 0 110px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── Header ── */
+.accoladesHeader {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.accoladesTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: 0px;
+    color: #E5E2E1;
+    margin: 0 0 16px 0;
+}
+
+.accoladesSubtitle {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #D5C4AB;
+    margin: 0 auto;
+    max-width: 560px;
+}
+
+/* ── Card Grid — each card is its own separate container ── */
+.accoladesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* ── Each card ── */
+.accoladeCard {
+    background-color: #161616;
+    border: 1px solid rgba(81, 69, 50, 0.30);
+    border-radius: 10px;
+    padding: 28px 28px 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.accoladeCard:hover {
+    background-color: #1a1a1a;
+    border-color: rgba(255, 186, 32, 0.20);
+}
+
+/* ── Icon ── */
+.accoladeIconWrapper {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.accoladeIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* ── Card text block ── */
+.accoladeCardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ── Title ── */
+.accoladeCardTitle {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #FFDCA1;
+    margin: 0;
+}
+
+/* ── Body text ── */
+.accoladeCardText {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #D5C4AB;
+    margin: 0;
+}
+
+
+/* ============================================================
+   GRIDX APP CALLOUT SECTION
+   ============================================================ */
+
+.appCalloutWrapper {
+    background-color: #0E0E0E;
+    padding: 80px 0;
+}
+
+/* The amber card */
+.appCalloutCard {
+    background-color: #FFDCA1;
+    border-radius: 24px;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+    min-height: 324px;
+}
+
+/* ── Decorative bg icon (top-right) ── */
+.appCalloutBgIcon {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 250px;
+    height: 367px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.appCalloutBgIconImg {
+    object-fit: contain;
+    object-position: top right;
+}
+
+/* ── Left content ── */
+.appCalloutContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    z-index: 1;
+    max-width: 496px;
+}
+
+/* Title */
+.appCalloutTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: 0px;
+    color: #412D00;
+    margin: 0 0 24px 0;
+}
+
+/* Description */
+.appCalloutDescription {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: rgba(65, 45, 0, 0.80);
+    margin: 0 0 36px 0;
+}
+
+/* ── Buttons row ── */
+.appCalloutButtons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Each store button */
+.appCalloutBtn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    flex-shrink: 0;
+}
+
+.appCalloutBtn:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-1px);
+}
+
+.appCalloutBtnIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.appCalloutBtnText {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.appCalloutBtnSub {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+.appCalloutBtnName {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #FFFFFF;
+}
+
+/* ── Right: App mockup image ── */
+.appCalloutImageWrapper {
+    position: relative;
+    width: 300px;
+    height: 164px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.15);
+}
+
+.appCalloutImage {
+    object-fit: cover;
+}
+
+
+/* ============================================================
+   OUR PRESENCE SECTION
+   ============================================================ */
+
+.presenceSection {
+    background-color: #0E0E0E;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── Two-column grid ── */
+.presenceGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
+}
+
+/* ── Left: map card ── */
+.presenceMapCard {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    overflow: visible;
+    background-color: #111111;
+    border: 1px solid rgba(81, 69, 50, 0.25);
+}
+
+.presenceMapImage {
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Subtle vignette gradient over the map */
+.presenceMapGradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 70% at 50% 50%,
+            transparent 40%,
+            rgba(14, 14, 14, 0.55) 100%);
+    pointer-events: none;
+}
+
+/* ── Right: content ── */
+.presenceContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Label */
+.presenceLabel {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #FFDCA1;
+    margin: 0 0 20px 0;
+}
+
+/* Title */
+.presenceTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: 0px;
+    color: #E5E2E1;
+    margin: 0 0 24px 0;
+}
+
+/* Description */
+.presenceDescription {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #D5C4AB;
+    margin: 0 0 40px 0;
+}
+
+/* ── States grid ── */
+.presenceStatesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 0;
+}
+
+.presenceStatesCol {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.presenceStateItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.presenceLocationIcon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+    opacity: 0.85;
+}
+
+.presenceStateName {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #E5E2E1;
+}
+
+
+/* ============================================================
+   CLOSING CTA SECTION
+   ============================================================ */
+
+.closingCTA {
+    position: relative;
+    min-height: 508px;
+    display: flex;
+    align-items: center;
+    background-image: url("/images/About/contact_overlay.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Dark tinted overlay — matches Figma #131313 @ 80% */
+.closingCTAOverlay {
+    position: absolute;
+    inset: 0;
+}
+
+/* Subtle amber centre glow */
+.closingCTA::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 50% 50%,
+            rgba(255, 184, 0, 0.07) 0%,
+            transparent 65%);
+    pointer-events: none;
+}
+
+/* ── Inner content wrapper ── */
+.closingCTAInner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+/* ── Heading ── */
+.closingCTATitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    color: #E5E2E1;
+    margin: 0 0 24px 0;
+    white-space: nowrap;
+}
+
+.closingCTAHighlight {
+    color: #FFDCA1;
+}
+
+/* ── Subtitle ── */
+.closingCTASubtitle {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 16px;
+    line-height: 1.75;
+    color: #B0A090;
+    margin: 0 auto 40px;
+    /* Prevent browser auto-detection of links/phone numbers */
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+/* ── CTA Button ── */
+.closingCTAButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-hanken-grotesk);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #412D00;
+    text-decoration: none;
+    /* Solid warm amber fill — matches Figma visual */
+    background-color: #FFDCA1;
+    border: none;
+    border-radius: 9999px;
+    padding: 18px 40px;
+    /* Figma drop shadows: #FFDCA1 @ 20% */
+    box-shadow:
+        0px 8px 10px -6px rgba(255, 220, 161, 0.20),
+        0px 20px 25px -5px rgba(255, 220, 161, 0.20);
+    transition: background-color 0.22s ease, box-shadow 0.22s ease, transform 0.18s ease;
+}
+
+.closingCTAButton:hover {
+    background-color: #ffe8bb;
+    box-shadow:
+        0px 8px 16px -6px rgba(255, 220, 161, 0.40),
+        0px 24px 32px -5px rgba(255, 220, 161, 0.35);
+    transform: translateY(-2px);
+}
+
+.closingCTAButton:active {
+    transform: translateY(0);
+    background-color: #f5cc90;
+}
+
+
+/* ============================================================
+   MEDIA RESPONSIVE CODE
+   ============================================================ */
+
+/* ── Responsive Banner ── */
+@media (max-width: 900px) {
+    .banner {
+        height: 500px;
+        margin-top: 80px;
+    }
+
+    .bannerTitle,
+    .bannerTitle span {
+        font-size: 52px;
+        line-height: 56px;
+    }
+
+    .bannerDescription {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        height: 420px;
+    }
+
+    .bannerTitle,
+    .bannerTitle span {
+        font-size: 38px;
+        line-height: 42px;
+        letter-spacing: -0.5px;
+    }
+
+    .bannerDescription {
+        font-size: 15px;
+        line-height: 22px;
+        margin-top: 16px;
+    }
+}
+
+/* ── Responsive Our Journey ── */
+@media (max-width: 900px) {
+    .ourJourney {
+        padding: 72px 0;
+    }
+
+    .ourJourneyInner {
+        flex-direction: column;
+        gap: 56px;
+    }
+
+    .ourJourneyImageContainer {
+        flex: none;
+        width: 100%;
+        max-width: 560px;
+        height: 300px;
+    }
+
+    .ourJourneyTitle {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .ourJourneyText {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+/* ── Responsive Vision & Mission ── */
+@media (max-width: 768px) {
+    .visionMissionGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .vmCard {
+        padding: 32px 24px 36px;
+    }
+
+    .vmCardTitle {
+        font-size: 22px;
+    }
+}
+
+/* ── Responsive Stats Strip ── */
 @media (max-width: 900px) {
     .statsRow {
         flex-wrap: wrap;
@@ -336,10 +1057,6 @@
     .statItem {
         flex: 0 0 50%;
     }
-
-    .statItem:not(:last-child)::after {
-        display: none;
-    }
 }
 
 @media (max-width: 480px) {
@@ -348,6 +1065,194 @@
     }
 
     .statValue {
-        font-size: 32px;
+        font-size: 36px;
+        line-height: 1.1;
+    }
+}
+
+/* ── Responsive Milestone Timeline (hide spine and stack year above card) ── */
+@media (max-width: 768px) {
+    .milestoneTitle {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .milestoneHeader {
+        margin-bottom: 56px;
+    }
+
+    .timelineRow {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 48px;
+    }
+
+    .timelineRow:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Reverse the flow on right-side rows so Year (last child) renders first */
+    .timelineRowRight {
+        flex-direction: column-reverse;
+    }
+
+    /* Hide spine completely */
+    .timelineSpine {
+        display: none;
+    }
+
+    .timelineSideLeft,
+    .timelineSideRight {
+        padding: 0;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    /* Solid gold styling for mobile year */
+    .timelineYear {
+        font-size: 36px;
+        line-height: 1.2;
+        opacity: 1;
+        margin-bottom: 4px;
+        text-align: left !important;
+    }
+
+    .timelineCard {
+        max-width: 100%;
+        padding: 22px 20px 24px;
+    }
+
+    .timelineCardTitle {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+/* ── Responsive Accolades ── */
+@media (max-width: 900px) {
+    .accoladesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .accoladesTitle {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 560px) {
+    .accoladesSection {
+        padding: 72px 0 80px;
+    }
+
+    .accoladesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .accoladesTitle {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .accoladeCard {
+        padding: 22px 20px 24px;
+    }
+}
+
+/* ── Responsive App Callout ── */
+@media (max-width: 900px) {
+    .appCalloutCard {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 48px 40px;
+        gap: 40px;
+    }
+
+    .appCalloutImageWrapper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .appCalloutTitle {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 560px) {
+    .appCalloutWrapper {
+        padding: 48px 0;
+    }
+
+    .appCalloutCard {
+        padding: 36px 24px;
+    }
+
+    .appCalloutTitle {
+        font-size: 28px;
+    }
+
+    .appCalloutDescription {
+        font-size: 16px;
+    }
+}
+
+/* ── Responsive Presence ── */
+@media (max-width: 900px) {
+    .presenceGrid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .presenceMapCard {
+        aspect-ratio: 16 / 9;
+    }
+
+    .presenceTitle {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 560px) {
+    .presenceSection {
+        padding: 72px 0;
+    }
+
+    .presenceTitle {
+        font-size: 28px;
+    }
+
+    .presenceDescription {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+/* ── Responsive Closing CTA ── */
+@media (max-width: 768px) {
+    .closingCTA {
+        min-height: 420px;
+    }
+
+    .closingCTATitle {
+        font-size: 28px;
+        letter-spacing: -0.5px;
+        white-space: normal;
+    }
+
+    .closingCTASubtitle {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .closingCTATitle {
+        font-size: 28px;
+    }
+
+    .closingCTAButton {
+        padding: 14px 28px;
+        font-size: 14px;
     }
 }

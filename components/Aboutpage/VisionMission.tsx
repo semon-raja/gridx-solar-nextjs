@@ -31,7 +31,7 @@ export default function VisionMission() {
                     <div className={styles.vmCard}>
                         <div className={styles.vmIconWrapper}>
                             <Image
-                                src="/images/About/flag.jpg"
+                                src="/images/About/flag.png"
                                 alt="Mission icon"
                                 width={32}
                                 height={32}

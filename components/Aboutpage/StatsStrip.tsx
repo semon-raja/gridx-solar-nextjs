@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 
 const stats = [
-    { value: "16",    label: "Years Management"    },
-    { value: "35Mw+", label: "Projects Done"       },
-    { value: "6+",    label: "Bases Across India"  },
-    { value: "500+",  label: "Happy Customers"      },
-    { value: "150+",  label: "Channel Partners"     },
+    { value: "16",    label: "Years Management"   },
+    { value: "35Mw+", label: "Projects Done"      },
+    { value: "6+",    label: "Bases Across India" },
+    { value: "500+",  label: "Happy Customers"    },
+    { value: "150+",  label: "Channel Partners"   },
 ];
 
 export default function StatsStrip() {

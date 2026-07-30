@@ -6,6 +6,11 @@ import Banner from "@/components/Aboutpage/Banner";
 import OurJourney from "@/components/Aboutpage/OurJourney";
 import VisionMission from "@/components/Aboutpage/VisionMission";
 import StatsStrip from "@/components/Aboutpage/StatsStrip";
+import MilestoneTimeline from "@/components/Aboutpage/MilestoneTimeline";
+import AccoladesRecognition from "@/components/Aboutpage/AccoladesRecognition";
+import AppCallout from "@/components/Aboutpage/AppCallout";
+import OurPresence from "@/components/Aboutpage/OurPresence";
+import ClosingCTA from "@/components/Aboutpage/ClosingCTA";
 
 export default function AboutPage() {
   return (
@@ -15,9 +20,16 @@ export default function AboutPage() {
       <OurJourney />
       <VisionMission />
       <StatsStrip />
+      <MilestoneTimeline />
+      <AccoladesRecognition />
+      <ClosingCTA />
+      <OurPresence />
+      <AppCallout />
       <Footer />
     </>
   );
 }
 
-
+
+
+

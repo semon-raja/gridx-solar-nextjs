@@ -21,21 +21,30 @@ export default function OurJourney() {
                         </p>
 
                         <p className={styles.ourJourneyText}>
-                            With over 35MW+ completed projects across 6 states, our
+                            With over 35Mw+ completed projects across 6 states, our
                             dedicated team of 75+ professionals works tirelessly to optimize
                             solar assets for maximum yield and longevity.
                         </p>
                     </div>
 
-                    {/* ── Right: Image ── */}
-                    <div className={styles.ourJourneyImageWrapper}>
-                        <Image
-                            src="/images/About/our_Jor.jpg"
-                            alt="Gridx Solar team at a solar installation site"
-                            fill
-                            className={styles.ourJourneyImage}
-                            sizes="(max-width: 768px) 100vw, 560px"
-                        />
+                    {/* ── Right: Image Container with Figma Corner Borders ── */}
+                    <div className={styles.ourJourneyImageContainer}>
+                        {/* Decorative Top-Left Corner Border */}
+                        <div className={styles.ourJourneyBorderTopLeft} />
+
+                        {/* Decorative Bottom-Right Corner Border */}
+                        <div className={styles.ourJourneyBorderBottomRight} />
+
+                        {/* Actual Image wrapper with rounded corners */}
+                        <div className={styles.ourJourneyImageWrapper}>
+                            <Image
+                                src="/images/About/our_Jor.jpg"
+                                alt="Gridx Solar team at a solar installation site"
+                                fill
+                                className={styles.ourJourneyImage}
+                                sizes="(max-width: 768px) 100vw, 560px"
+                            />
+                        </div>
                     </div>
 
                 </div>
