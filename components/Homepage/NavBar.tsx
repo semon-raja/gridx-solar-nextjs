@@ -27,7 +27,7 @@ export default function Navbar() {
                         <Image
                             src="/images/Homepage/10011.png"
                             alt="GridX Solar"
-                            width={150}
+                            width={95}
                             height={34}
                         />
                     </Link>
@@ -61,9 +61,9 @@ export default function Navbar() {
                         </div>
 
                         
-                        <button className={styles.navbar_contactButton} suppressHydrationWarning>
+                        <Link href="/contact" className={styles.navbar_contactButton}>
                             Contact Us
-                        </button>
+                        </Link>
 
                         
                         <button
@@ -104,13 +104,13 @@ export default function Navbar() {
                 </div>
 
                 
-                <button
+                <Link
+                    href="/contact"
                     className={styles.mobileContactButton}
                     onClick={() => setMenuOpen(false)}
-                    suppressHydrationWarning
                 >
                     Contact Us
-                </button>
+                </Link>
             </div>
         </>
     );

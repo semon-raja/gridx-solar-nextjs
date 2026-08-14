@@ -22,7 +22,6 @@ export default function Solutions(){
                     <div className={styles.solutionsGrid}>
                         <div className={styles.topRow}> 
                             <div className={styles.solarCard}>
-                                <div className={styles.solarImageOverlay}></div>
                                 <div className={styles.solarCardContent}>
                                     <p className={styles.solarCardDescription}>
                                         Custom utility-scale solar EPC projects for commercial and <br />industrial applications.
@@ -35,12 +34,10 @@ export default function Solutions(){
                                 </div>
                             </div>
                             <div className={styles.residentialCard}>
-                                <div className={styles.residentialOverlay}></div>
                                 <div className={styles.residentialCardContent}>
                                     <h2 className={styles.residentialCardTitle}>
                                         Residential Solar
                                     </h2>
-
                                     <p className={styles.residentialCardDescription}>
                                         Solar power systems for residential <br/> applications
                                     </p>
@@ -49,7 +46,6 @@ export default function Solutions(){
                         </div>
                         <div className={styles.bottomRow}>
                             <div className={styles.hybridCard}>
-                                <div className={styles.hybridOverlay}></div>
                                 <div className={styles.hybridCardContent}>
                                     <h2 className={styles.residentialCardTitle}>
                                         Hybrid & ESS
@@ -72,7 +68,7 @@ export default function Solutions(){
                                         GRIDX Mobile App
                                     </h2>
                                     <p className={styles.appCardDescription}>
-                                        One touch after sale service. Complaint booking, services, AMC for your solar system all in one app.
+                                        One touch after sale service. <br /> Complaint booking, services, AMC for your solar system all in one app.
                                     </p>
                                     <button className={styles.appCardButton} suppressHydrationWarning>
                                         Get the App

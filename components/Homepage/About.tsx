@@ -7,10 +7,11 @@ export default function About() {
         <section className={styles.aboutSection}>
             <div className={styles.aboutContainer}>
 
+                {/* ── Left: Image ── */}
                 <div className={styles.aboutImageWrapper}>
                     <div className={styles.aboutImageBorder}>
                         <Image
-                            src="/images/Homepage/10001.jpeg"
+                            src="/images/Homepage/about_sec.png"
                             alt="GridX Solar team reviewing solar project plans"
                             fill
                             style={{ objectFit: 'cover', borderRadius: '24px' }}
@@ -20,38 +21,42 @@ export default function About() {
                             <h3 className={styles.netZeroTitle}>Net Zero</h3>
                             <p className={styles.netZeroText}>
                                 Committed to the Net Zero Carbon Emission Targets, we as an
-                                organisation strive to make an impact by contributing to a clean
+                                organisation strive to make an <br/>impact by contributing to a clean <br/>
                                 and green future.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                
+                {/* ── Right: Content ── */}
                 <div className={styles.aboutContent}>
+
                     <p className={styles.aboutLabel}>Our Identity</p>
                     <h2 className={styles.aboutTitle}>Company Overview</h2>
 
                     <div className={styles.aboutBody}>
                         <p>
-                            Incorporated in 2016 with a vision to become a leader in the power sector,
-                            Starc Energy Solutions Pvt. Ltd. which later expanded into Gridx Solar Pvt.
-                            Ltd. has successfully completed more than 35Mw of Solar Projects both In
-                            India and abroad.
+                            Incorporated in 2016 with a vision to become a leader in the power
+                            sector. Starc Energy Solutions Pvt. Ltd. which later expanded into
+                            GridX Solar Pvt. Ltd. has successfully completed more than 35Mw of
+                            Solar Projects both In India and abroad.
                         </p>
                         <p>
-                            The company has its operational bases in 6 states in India from Kerala in the
-                            Southern Region to Assam in the North Eastern Region. We have a work force of
-                            over 75 highly motivated people with our successful projects reaching a total
-                            capacity of 35Mw in the past 9 years.
+                            The company has its operational bases in 6 states in India from
+                            Kerala in the Southern Region to Assam in the North Eastern Region.
+                            We have a work force of over 75 highly motivated people with our
+                            successful projects reaching a total capacity of 35Mw in the past
+                            9 years.
                         </p>
                         <p>
-                            We aim to become the most technically sound, reliable, and most bankable solar
-                            EPC In India with continuous improvement in engineering and excellent management.
+                            We aim to become the most technically sound, reliable, and most
+                            bankable solar EPC in India with continuous improvement in
+                            engineering and excellent management.
                         </p>
                     </div>
 
-                  
+                    <div className={styles.aboutDivider} />
+
                     <div className={styles.aboutBadges}>
                         <div className={styles.aboutBadge}>
                             <div className={styles.aboutBadgeIcon}>
@@ -76,6 +81,7 @@ export default function About() {
                             <span>GIZ PV Port Certified</span>
                         </div>
                     </div>
+
                 </div>
 
             </div>

@@ -27,7 +27,7 @@ export default function Footer(){
                 <div className={styles.footerInfo}>
                     <div className={styles.footerLogo}>
                         <Image
-                        src="/images/Homepage/10011.png"
+                        src="/images/Homepage/footer_logo.png"
                         alt="GridX Solar"
                         width={95}
                         height={34}
@@ -35,7 +35,7 @@ export default function Footer(){
                     </div>
 
                     <p>
-                    Empowering India's energy transition through
+                    Empowering India&apos;s energy transition through
                     high-performance <br /> solar infrastructure and
                     engineering <br />  excellence since 2016.
                     </p>
@@ -86,28 +86,28 @@ export default function Footer(){
                     <h4>Stay Updated</h4>
 
                     <p>
-                    Join our monthly newsletter for
+                    Join our monthly newsletter for <br />
                     energy insights.
                     </p>
 
                     <div className={styles.newsletter}>
 
-                    <input
-                        type="email"
-                        placeholder="Email address"
-                        suppressHydrationWarning
-                    />
+                        <input
+                            type="email"
+                            placeholder="Email address"
+                            suppressHydrationWarning
+                        />
 
-                    <button suppressHydrationWarning>
-                        <div className={styles.SendImg}>
-                            <Image
-                            src="/images/Homepage/send.png"
-                            alt="Send"
-                            width={22}
-                            height={22}
-                            />
-                        </div>
-                    </button>
+                        <button suppressHydrationWarning>
+                            <div className={styles.SendImg}>
+                                <Image
+                                src="/images/Homepage/send.png"
+                                alt="Send"
+                                width={22}
+                                height={22}
+                                />
+                            </div>
+                        </button>
 
                     </div>
 

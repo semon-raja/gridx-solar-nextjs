@@ -20,9 +20,9 @@ export default function VisionMission() {
                         </div>
                         <h3 className={styles.vmCardTitle}>Our Vision</h3>
                         <p className={styles.vmCardText}>
-                            To be the most trusted name in renewable energy,
-                            revolutionizing India&apos;s landscape with high-efficiency
-                            solar infrastructures that define future standards of
+                            To be the most trusted name in renewable energy, <br />
+                            revolutionizing India&apos;s landscape with high-efficiency <br />
+                            solar infrastructures that define future standards of<br />
                             energy independence.
                         </p>
                     </div>
@@ -33,16 +33,16 @@ export default function VisionMission() {
                             <Image
                                 src="/images/About/flag.png"
                                 alt="Mission icon"
-                                width={32}
-                                height={32}
+                                width={22.5}
+                                height={25.5}
                                 className={styles.vmIcon}
                             />
                         </div>
                         <h3 className={styles.vmCardTitle}>Our Mission</h3>
                         <p className={styles.vmCardText}>
-                            To deliver superior solar assets through rigorous
-                            engineering, transparent procurement, and rapid
-                            construction, ensuring every stakeholder transitions
+                            To deliver superior solar assets through rigorous<br />
+                            engineering, transparent procurement, and rapid<br />
+                            construction, ensuring every stakeholder transitions<br />
                             seamlessly to clean energy.
                         </p>
                     </div>

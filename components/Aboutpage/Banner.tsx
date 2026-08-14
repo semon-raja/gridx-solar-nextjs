@@ -9,7 +9,7 @@ export default function Banner() {
                 <div className={styles.bannerContent}>
 
                     <h1 className={styles.bannerTitle}>
-                        Powering India's Clean
+                        Powering India&apos;s Clean
                         <br />
                         Energy Future <span>Since 2016</span>
                     </h1>

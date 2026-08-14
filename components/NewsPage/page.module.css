@@ -1,0 +1,684 @@
+/* ============================================================
+   NEWS PAGE — page.module.css
+   ============================================================ */
+
+/* ============================================================
+   NEWS HERO / BANNER
+   ============================================================ */
+
+.newsHero {
+    position: relative;
+    width: 100%;
+    height: 537px;
+    min-height: 400px;
+    margin-top: 127px; /* accounts for fixed navbar */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Background image ────────────────────────────────────── */
+.newsHeroImage {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+}
+
+/* ── Subtle blue/dark overlay (sits between image & gradient) */
+.newsHeroBlueOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 20, 40, 0.2);
+    /* #00142833 */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ── Bottom-to-top dark gradient (Figma exact) ───────────── */
+.newsHeroGradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        #131313 0%,
+        rgba(19, 19, 19, 0.8) 50%,
+        rgba(19, 19, 19, 0) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ── Decorative 480×480 black element ────────────────────── */
+.newsHeroDecoration {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 9999px;
+    background: #000000;
+    /* Positioned at top-right, partially out of frame, creates a
+       dark vignette on that corner matching the Figma composition */
+    top: -160px;
+    right: -80px;
+    opacity: 0.35;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ── Hero content (centered) ──────────────────────── */
+.newsHeroContent {
+    position: relative;
+    z-index: 3;
+    width: 712px;
+    max-width: 896px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 24px;
+    padding: 0 20px;
+}
+
+/* ── Main heading: Space Grotesk 700 72px/-1.44px ────────── */
+.newsHeroTitle {
+    /* Figma: 535 × 80px */
+    width: 535px;
+    max-width: 100%;
+    height: 80px;
+    margin: 0;
+
+    font-family: var(--font-space-grotesk);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 72px;
+    line-height: 80px;
+    letter-spacing: -1.44px;
+    text-align: center;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+/* "News" word — gold/amber highlight */
+.newsHeroTitleGold {
+    color: #FFB800;
+}
+
+/* ── Description: Hanken Grotesk 400 18px/28px ───────────── */
+.newsHeroDescription {
+    /* Figma: 648 × 56px */
+    width: 648px;
+    max-width: 100%;
+    margin: 0;
+
+    font-family: var(--font-hanken-grotesk);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #D5C4AB;
+}
+
+/* ============================================================
+   RESPONSIVE — News Hero
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .newsHeroTitle {
+        width: auto;
+        max-width: 90%;
+        height: auto;
+        font-size: 56px;
+        line-height: 64px;
+        letter-spacing: -1px;
+        white-space: normal;
+    }
+
+    .newsHeroDescription {
+        width: min(648px, 90%);
+    }
+}
+
+@media (max-width: 768px) {
+    .newsHero {
+        height: 440px;
+    }
+
+    .newsHeroTitle {
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: -0.8px;
+    }
+
+    .newsHeroDescription {
+        font-size: 16px;
+        line-height: 24px;
+        width: min(560px, 90%);
+    }
+
+    .newsHeroDecoration {
+        width: 320px;
+        height: 320px;
+        top: -100px;
+        right: -60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsHero {
+        height: 380px;
+    }
+
+    .newsHeroTitle {
+        max-width: calc(100% - 32px);
+        height: auto;
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: -0.6px;
+    }
+
+    .newsHeroDescription {
+        width: calc(100% - 40px);
+        height: auto;
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .newsHeroDecoration {
+        width: 240px;
+        height: 240px;
+        top: -80px;
+        right: -40px;
+    }
+}
+
+/* ============================================================
+   NEWS GRID SECTION — Bento / Asymmetric Layout
+   ============================================================ */
+
+/* ── Section wrapper ─────────────────────────────────────── */
+.newsGridSection {
+    background: #131313;
+    padding: 60px 0 96px;
+}
+
+/* ── 1200px centered container ───────────────────────────── */
+.newsGridContainer {
+    width: 1200px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+
+/* ── Grid fade transition on page change ────────────── */
+.newsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 431px 431px;
+    row-gap: 25px;
+    column-gap: 18px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.newsGridFade {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ── Pagination ───────────────────────────── */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 48px;
+}
+
+/* Shared: number buttons + arrow buttons */
+.paginationBtn,
+.paginationArrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-hanken-grotesk), "Hanken Grotesk", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Inactive number button */
+.paginationBtn {
+    background: #201F1F;
+    color: #D5C4AB;
+}
+
+.paginationBtn:hover:not(.paginationBtnActive) {
+    background: #2c2b2b;
+}
+
+/* Active number button */
+.paginationBtnActive {
+    background: #FFB800;
+    color: #131313;
+    font-weight: 700;
+}
+
+/* Arrow buttons < > */
+.paginationArrow {
+    background: #201F1F;
+    color: #D5C4AB;
+    font-size: 18px;
+    padding-bottom: 1px;
+}
+
+.paginationArrow:hover:not(:disabled) {
+    background: #2c2b2b;
+    color: #E5E2E1;
+}
+
+.paginationArrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* RESPONSIVE — News Grid */
+/* ── Featured card — spans first 2 columns of row 1 ──────── */
+.featuredCard {
+    grid-column: span 2;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1E1E1E;
+    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+    isolation: isolate;
+    /* No flex needed: content uses position:absolute to fill the card */
+}
+
+/* Background image fills entire featured card */
+.featuredCardBg {
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+}
+
+/* Gradient: top is semi-transparent, bottom is solid dark — matches Figma */
+.featuredCardGradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(10, 10, 10, 0.20) 0%,
+        rgba(10, 10, 10, 0.40) 30%,
+        rgba(15, 15, 15, 0.78) 58%,
+        rgba(20, 20, 20, 0.95) 78%,
+        #1A1A1A 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/*
+  Content fills the entire card (position absolute).
+  space-between pushes:
+    - cardMetaRow  → TOP  (shows above the beautiful sky image)
+    - featuredCardBottom → BOTTOM  (heading + description + CTA)
+  padding: 40px matches Figma's inset on all sides.
+*/
+.featuredCardContent {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*
+  Bottom group: heading, description, CTA.
+  flex-direction: column with gap controls the
+  spacing between these three elements precisely.
+*/
+.featuredCardBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Featured title: Space Grotesk 600 48px/56px */
+.featuredCardTitle {
+    font-family: var(--font-space-grotesk);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin: 0 0 16px 0;   /* gap below heading before description */
+    max-width: 726px;
+}
+
+/* Featured description: Hanken Grotesk 400 16px/24px */
+.featuredCardDesc {
+    font-family: var(--font-hanken-grotesk);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #D5C4AB;
+    margin: 0 0 20px 0;   /* gap below description before CTA */
+    max-width: 672px;
+}
+
+/* "Read Full Story" / "View Project Specs" link */
+.cardLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 0;
+    font-family: var(--font-jetbrains-mono);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFDCA1;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.cardLink:hover {
+    opacity: 0.8;
+}
+
+.cardLinkArrow {
+    display: inline-block;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(89%) sepia(27%) saturate(500%) hue-rotate(340deg) brightness(103%);
+}
+
+/* ── Standard image card (used 3×) ──────────────────────── */
+.standardCard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1E1E1E;
+    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image region: top 192px of the card */
+.standardCardImageWrap {
+    position: relative;
+    flex: 0 0 192px;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* The image fills the wrap */
+.standardCardImage {
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+}
+
+/* Bottom fade: transparent at top, solid #1E1E1E at ~80% — blends image into card bg */
+.standardCardImageGrad {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(30, 30, 30, 0) 0%,
+        rgba(30, 30, 30, 0.6) 60%,
+        #1E1E1E 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Content area below image: left/right padding creates ~337px content width */
+.standardCardContent {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 24px 24px;
+}
+
+/* Standard card title: Space Grotesk 500 20px/28px — Figma exact spec */
+.standardCardTitle {
+    font-family: var(--font-space-grotesk);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* Standard card description: Hanken Grotesk 400 14px/20px */
+.standardCardDesc {
+    font-family: var(--font-hanken-grotesk);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: #D5C4AB;
+    margin: 0;
+    flex: 1 1 auto;
+}
+
+/* ── Text / Data-focused card (no image) ─────────────────── */
+.textCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #1C1B1B;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Decorative icon: top-right, subtle visibility ~25% */
+.textCardIconDecor {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    opacity: 0.25;
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-start;
+}
+
+.textCardIconImg {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(89%) sepia(27%) saturate(500%) hue-rotate(340deg) brightness(103%);
+}
+
+/* Content sits above the decorative icon */
+.textCardContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: calc(100% - 70px); /* leave room for top-right icon */
+}
+
+/* Category eyebrow: JetBrains Mono 400 12px letter-spacing 1.2px */
+.textCardCategory {
+    font-family: var(--font-jetbrains-mono);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #FFDCA1;
+}
+
+/* Text card title: Space Grotesk 500 24px/32px */
+.textCardTitle {
+    font-family: var(--font-space-grotesk);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* Text card description: Hanken Grotesk 400 16px/24px */
+.textCardDesc {
+    font-family: var(--font-hanken-grotesk);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #D5C4AB;
+    margin: 0;
+}
+
+/* ── Shared: card meta row — badge + date side by side ── */
+.cardMetaRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+/* Shared date text */
+.cardDate {
+    font-family: var(--font-jetbrains-mono);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #D5C4AB;
+}
+
+/* ── Category badge variants ─────────────────────────────── */
+
+/* Base badge shared styles */
+.badgeGold,
+.badgeBlue,
+.badgeGreen,
+.badgeGray {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-family: var(--font-jetbrains-mono);
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Gold — Company Announcements */
+.badgeGold {
+    background: rgba(255, 220, 161, 0.2);
+    border: 1px solid rgba(255, 220, 161, 0.3);
+    backdrop-filter: blur(2px);
+    color: #FFDCA1;
+}
+
+/* Blue — Product Launches */
+.badgeBlue {
+    background: #3C4962;
+    color: #ABB9D6;
+}
+
+/* Green — Awards & Achievements */
+.badgeGreen {
+    background: rgba(72, 223, 129, 0.2);
+    border: 1px solid rgba(107, 254, 156, 0.3);
+    color: #4AE183;
+}
+
+/* Gray — Industry Events */
+.badgeGray {
+    background: #353534;
+    color: #E5E2E1;
+}
+
+/* ============================================================
+   RESPONSIVE — News Grid
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .newsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .featuredCard {
+        grid-column: span 2;
+    }
+
+    .featuredCardTitle {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+@media (max-width: 768px) {
+    .newsGridSection {
+        padding: 40px 0 64px;
+    }
+
+    .newsGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 16px;
+    }
+
+    .featuredCard {
+        grid-column: span 1;
+        min-height: 400px;
+    }
+
+    .featuredCardTitle {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .textCard {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .featuredCardTitle {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .standardCardImageWrap {
+        flex: 0 0 160px;
+    }
+}

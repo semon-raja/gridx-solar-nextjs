@@ -1,0 +1,569 @@
+/* ============================================================
+   SHARED CONTAINER
+   ============================================================ */
+
+.container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   BANNER / HERO SECTION
+   ============================================================ */
+
+.banner {
+    position: relative;
+    height: 790px;
+    background-image: url("/images/Partners/banner.jpg");
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    margin-top: 127px;
+    /* accounts for fixed navbar */
+    overflow: hidden;
+}
+
+/* Left-to-right horizontal dark gradient overlay */
+.bannerOverlayH {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            #131313 0%,
+            rgba(19, 19, 19, 0.6) 50%,
+            rgba(19, 19, 19, 0) 100%);
+    z-index: 1;
+}
+
+/* Bottom-to-top vertical dark gradient overlay */
+.bannerOverlayV {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg,
+            #131313 0%,
+            rgba(19, 19, 19, 0) 50%,
+            rgba(19, 19, 19, 0) 100%);
+    z-index: 1;
+}
+
+.banner .container {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Banner Content ─────────────────────────────────────── */
+
+.bannerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 928px;
+    gap: 0;
+    padding-top: 8px;
+}
+
+/* GLOBAL ECOSYSTEM — yellow uppercase spaced label */
+.bannerEyebrow {
+    font-family: var(--font-jetbrains-mono);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #FFB800;
+    margin: 0 0 20px 0;
+}
+
+/* Main Heading */
+.bannerTitle {
+    font-family: var(--font-space-grotesk);
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 90px;
+    letter-spacing: -1.44px;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0 0 24px 0;
+}
+
+/* "Partners" span — gold coloured */
+.bannerTitleGold {
+    color: #FFB800;
+    display: block;
+}
+
+/* Description paragraph */
+.bannerDescription {
+    font-family: var(--font-hanken-grotesk);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29.25px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #D5C4AB;
+    max-width: 640px;
+    margin: 0 0 20px 0;
+}
+
+/* "Trusted by Tier 1 Manufacturers" — italic jetbrains yellow */
+.bannerSubtitle {
+    font-family: var(--font-jetbrains-mono);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #FFB800;
+    margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVE — Banner
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .banner {
+        height: 680px;
+    }
+
+    .bannerTitle {
+        font-size: 60px;
+        line-height: 74px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: auto;
+        min-height: 600px;
+        padding-bottom: 60px;
+        background-position: 70% center;
+    }
+
+    .bannerOverlayH {
+        background: linear-gradient(90deg,
+                rgba(19, 19, 19, 0.97) 0%,
+                rgba(19, 19, 19, 0.85) 60%,
+                rgba(19, 19, 19, 0.7) 100%);
+    }
+
+    .bannerContent {
+        max-width: 100%;
+        padding-top: 0;
+    }
+
+    .bannerTitle {
+        font-size: 44px;
+        line-height: 56px;
+    }
+
+    .bannerDescription {
+        font-size: 17px;
+        line-height: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        min-height: 560px;
+    }
+
+    .bannerTitle {
+        font-size: 34px;
+        line-height: 44px;
+    }
+
+    .bannerEyebrow {
+        font-size: 13px;
+        letter-spacing: 1.2px;
+    }
+
+    .bannerDescription {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .bannerSubtitle {
+        font-size: 13px;
+    }
+}
+
+
+/* ============================================================
+   TRUSTED TECHNOLOGY PARTNERS SECTION
+   ============================================================ */
+
+.trustedPartnersSection {
+    width: 100%;
+    min-height: 523.38px;
+    background: #0E0E0E;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    box-sizing: border-box;
+}
+
+.trustedContainer {
+    width: 1200px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* ── Header row ──────────────────────────────────────────── */
+.partnersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.partnersHeaderLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ── Heading ─────────────────────────────────────────────── */
+.partnersHeading {
+    font-family: var(--font-space-grotesk);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0;
+    color: #E5E2E1;
+    margin: 0;
+    white-space: nowrap;
+    /* Figma: 668.67px × 56px — keep on one line at 1440px */
+    max-width: 668.67px;
+}
+
+/* ── Description ─────────────────────────────────────────── */
+.partnersDescription {
+    font-family: var(--font-hanken-grotesk);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #D5C4AB;
+    margin: 0;
+    max-width: 655.63px;
+}
+
+/* ── Badge ───────────────────────────────────────────────── */
+.partnersBadge {
+    flex-shrink: 0;
+    width: 312.41px;
+    height: 42px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 220, 161, 0.2);
+    padding: 8px 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-jetbrains-mono);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #FFBA20;
+    white-space: nowrap;
+}
+
+/* ── Cards grid ──────────────────────────────────────────── */
+.partnersGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 1200px;
+    max-width: 100%;
+}
+
+/* ── Individual card ─────────────────────────────────────── */
+.partnerCard {
+    width: 100%;
+    height: 147.38px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(30, 30, 30, 0.6);
+    padding: 32.69px 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Logo wrapper ────────────────────────────────────────── */
+.partnerLogoWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 16px;
+}
+
+/* ── Logo image ──────────────────────────────────────────── */
+.partnerLogo {
+    width: 73.39px !important;
+    height: 40px !important;
+    object-fit: contain;
+    opacity: 0.7;
+    filter: saturate(0);
+}
+
+/* ── Card title ──────────────────────────────────────────── */
+.partnerCardTitle {
+    font-family: var(--font-jetbrains-mono);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #D5C4AB;
+    text-align: center;
+    margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVE — Trusted Partners
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .partnersHeading {
+        white-space: normal;
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .partnersGrid {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .trustedPartnersSection {
+        padding: 64px 0;
+    }
+
+    .partnersHeader {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .partnersBadge {
+        width: auto;
+        min-width: 200px;
+    }
+
+    .partnersHeading {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .partnersGrid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .partnerCard {
+        height: auto;
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trustedPartnersSection {
+        padding: 48px 0;
+    }
+
+    .partnersGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .partnerCard {
+        width: 100%;
+    }
+
+    .partnersHeading {
+        font-size: 26px;
+        line-height: 34px;
+    }
+}
+
+/* ============================================================
+   CLOSING CTA SECTION — "Together for Better Energy"
+   ============================================================ */
+
+/* ── Outer section: background + vertical breathing room ──── */
+.closingSection {
+    background-color: #131313;
+    padding: 62.12px 0 96px;
+}
+
+/* ── CTA card: 1200×366px, centered, 32px radius ─────────── */
+.closingCard {
+    position: relative;
+    width: 1200px;
+    max-width: calc(100% - 48px);
+    height: 366px;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    padding: 96px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 220, 161, 0.1);
+    background: #201F1F;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Glow orbs (256×256, #FFDCA133, blur 80px) ───────────── */
+.closingOrb {
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    border-radius: 9999px;
+    background: rgba(255, 220, 161, 0.2);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.closingOrbLeft {
+    top: -60px;
+    left: -60px;
+}
+
+.closingOrbRight {
+    bottom: -60px;
+    right: -60px;
+}
+
+/* ── Inner content column ─────────────────────────────────── */
+.closingContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+/* ── Heading: Space Grotesk 600 48px/56px, #E5E2E1 ──────── */
+.closingTitle {
+    font-family: var(--font-space-grotesk);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #E5E2E1;
+    margin: 0;
+    white-space: nowrap;
+    /* Figma: 620.06px × 56px — one line at desktop */
+    max-width: 620.06px;
+}
+
+/* ── Gold decorative underline: 96×4px ───────────────────── */
+.closingDivider {
+    width: 96px;
+    height: 4px;
+    background: #FFDCA1;
+    border-radius: 2px;
+    flex-shrink: 0;
+    /* gap from parent handles spacing — no extra margin needed */
+}
+
+/* ── Description: Hanken Grotesk 400 18px/28px, #D5C4AB ─── */
+.closingDescription {
+    font-family: var(--font-hanken-grotesk);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #D5C4AB;
+    margin: 0;
+    /* Figma: 760.58px × 56px */
+    width: 760.58px;
+    max-width: 100%;
+}
+
+/* ============================================================
+   RESPONSIVE — Closing CTA
+   ============================================================ */
+
+@media (max-width: 1280px) {
+    .closingCard {
+        height: auto;
+        min-height: 300px;
+        padding: 72px 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .closingSection {
+        padding: 48px 0 64px;
+    }
+
+    .closingCard {
+        min-height: 260px;
+        padding: 56px 40px;
+    }
+
+    .closingTitle {
+        white-space: normal;
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .closingDescription {
+        font-size: 16px;
+        line-height: 26px;
+        width: 100%;
+    }
+
+    .closingOrb {
+        width: 180px;
+        height: 180px;
+    }
+
+    .closingContent {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .closingCard {
+        max-width: calc(100% - 32px);
+        padding: 48px 24px;
+        border-radius: 20px;
+    }
+
+    .closingTitle {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .closingDivider {
+        width: 64px;
+    }
+}

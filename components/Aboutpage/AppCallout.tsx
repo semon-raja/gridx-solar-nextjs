@@ -26,8 +26,8 @@ export default function AppCallout() {
                         </h2>
 
                         <p className={styles.appCalloutDescription}>
-                            Experience the future of solar management with the GRIDX App.
-                            Monitor yields, request maintenance, and get instant technical
+                            Experience the future of solar management with the<br /> GRIDX App.
+                            Monitor yields, request maintenance, and <br /> get instant technical
                             support directly from your pocket.
                         </p>
 

@@ -17,9 +17,12 @@ export default function StarcEnergy() {
 
                     <div className={styles.starcLeft}>
 
-                        <p className={styles.starcLabel}>
-                            EXCLUSIVE PARTNERSHIP
-                        </p>
+                        <div className={styles.starcLabelContainer}>
+                            <p className={styles.starcLabel}>
+                                EXCLUSIVE PARTNERSHIP
+                            </p>
+                            <span className={styles.starcDivider}></span>
+                        </div>
 
                         <h2 className={styles.starcTitle}>
                             Powered by Starc 
@@ -29,8 +32,8 @@ export default function StarcEnergy() {
 
                         <p className={styles.starcDescription}>
                             We aim to become the most technically sound, reliable, and
-                            most bankable solar EPC in India with continuous improvement
-                            in engineering and excellent management.
+                            most <br /> bankable solar EPC in India with continuous improvement
+                            in <br />engineering and excellent management.
                         </p>
 
                         <button className={styles.starcButton} suppressHydrationWarning>
@@ -50,13 +53,13 @@ export default function StarcEnergy() {
 
                         <div className={styles.infoCard}>
                             <p className={styles.infoText}>
-                                Most Bankable Company – BBB+ Grade <br/>Equivalent
+                                Most Bankable Company – BBB+ grade <br/> Equalent
                             </p>
                         </div>
 
                         <div className={styles.infoCard}>
                             <p className={styles.infoText}>
-                                Successfully Completed India's 1st PV <br/> port solar project in BHU in collaboration <br/> with GIZ
+                                Successfully Completed India&apos;s 1st PV <br/> port solar project in BHU in collaboration <br/> with GIZ
                             </p>
                         </div>
 

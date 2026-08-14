@@ -21,13 +21,15 @@ export default function OurPresence() {
 
                     {/* ── Left: Map card ── */}
                     <div className={styles.presenceMapCard}>
-                        <Image
-                            src="/images/About/map.png"
-                            alt="India presence map"
-                            fill
-                            className={styles.presenceMapImage}
-                            sizes="(max-width: 900px) 100vw, 50vw"
-                        />
+                        <div className={styles.presenceMapImageFrame}>
+                            <Image
+                                src="/images/About/map.png"
+                                alt="India presence map"
+                                fill
+                                className={styles.presenceMapImage}
+                                sizes="(max-width: 900px) 100vw, 50vw"
+                            />
+                        </div>
                         {/* gradient overlay */}
                         <div className={styles.presenceMapGradient} aria-hidden="true" />
                     </div>
@@ -42,9 +44,9 @@ export default function OurPresence() {
                         </h2>
 
                         <p className={styles.presenceDescription}>
-                            With core operational bases in Kerala, Tamil Nadu, and
-                            Karnataka, our reach extends to 6 states, supported by a
-                            network of 150+ dedicated channel partners who ensure local
+                            With core operational bases in Kerala, Tamil Nadu, and <br />
+                            Karnataka, our reach extends to 6 states, supported by a <br />
+                            network of 150+ dedicated channel partners who ensure local <br />
                             expertise with national standards.
                         </p>
 

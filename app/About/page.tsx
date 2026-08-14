@@ -1,6 +1,5 @@
 import Navbar from "@/components/Homepage/NavBar";
 import Footer from "@/components/Homepage/Footer";
-import styles from "@/components/Aboutpage/page.module.css"
 
 import Banner from "@/components/Aboutpage/Banner";
 import OurJourney from "@/components/Aboutpage/OurJourney";

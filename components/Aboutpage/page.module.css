@@ -25,7 +25,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: 100px;
+    margin-top: 127px;
 }
 
 .bannerOverlay {
@@ -198,18 +198,16 @@
 
 /* ── Card ── */
 .vmCard {
-    background-color: #181818;
-    border-radius: 8px;
+    background-color: #131313;
+    border-radius: 12px;
     padding: 40px 36px 44px;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    transition: background-color 0.25s ease;
+    gap: 16px;
+    border-color: #FFFFFF14;
+    border-width: 1px;
 }
 
-.vmCard:hover {
-    background-color: #1f1f1f;
-}
 
 /* ── Icon circle ── */
 .vmIconWrapper {
@@ -232,21 +230,21 @@
 /* ── Card title ── */
 .vmCardTitle {
     font-family: var(--font-space-grotesk);
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.15;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
     letter-spacing: -0.5px;
-    color: #E5E2E1;
+    color: #FFDCA1;
     margin: 0 0 16px 0;
 }
 
 /* ── Card body text ── */
 .vmCardText {
     font-family: var(--font-hanken-grotesk);
-    font-size: 15px;
-    line-height: 1.75;
-    color: #A89B8A;
-    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #D5C4AB;
 }
 
 
@@ -255,10 +253,12 @@
    ============================================================ */
 
 .statsStrip {
-    background-color: #0E0E0E;
+    background-color: #131313;
     border-top: 1px solid rgba(81, 69, 50, 0.10);
     border-bottom: 1px solid rgba(81, 69, 50, 0.10);
     padding: 80px 0;
+    border-style: solid;
+    border-color: #131313;
 }
 
 .statsRow {
@@ -289,12 +289,13 @@
 
 /* ── Stat label ── */
 .statLabel {
-    font-family: var(--font-hanken-grotesk);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-family: var(--font-jetbrains-mono);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
-    color: #7A6E62;
+    color: #D5C4AB;
 }
 
 
@@ -303,21 +304,10 @@
    ============================================================ */
 
 .milestoneSection {
-    background-color: #111111;
+    background-color: #131313;
     padding: 100px 0 120px;
     position: relative;
     overflow: hidden;
-}
-
-/* subtle background texture */
-.milestoneSection::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%,
-            rgba(255, 184, 0, 0.04) 0%,
-            transparent 70%);
-    pointer-events: none;
 }
 
 /* ── Header ── */
@@ -351,9 +341,22 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    row-gap: 110px;
 }
 
 /* ── One row (left + spine + right) ── */
+/* Exported Figma divider, positioned behind every milestone marker. */
+.timelineDivider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 0;
+    object-fit: fill;
+}
 .timelineRow {
     display: grid;
     grid-template-columns: 1fr 56px 1fr;
@@ -400,19 +403,21 @@
 
 /* ── Card ── */
 .timelineCard {
-    background-color: #181818;
+    background-color: #1C1B1B;
     border: 1px solid rgba(81, 69, 50, 0.25);
     border-radius: 8px;
     padding: 28px 32px 32px;
-    max-width: 480px;
     width: 100%;
-    transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
-.timelineCard:hover {
-    background-color: #1d1d1d;
-    border-color: rgba(255, 184, 0, 0.20);
+.timelineSideLeft .timelineCard {
+    text-align: right;
 }
+
+.timelineSideRight .timelineCard {
+    text-align: left;
+}
+
 
 .timelineCardTitle {
     font-family: var(--font-space-grotesk);
@@ -437,26 +442,12 @@
 /* ── Centre spine ── */
 .timelineSpine {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     position: relative;
     height: 100%;
     min-height: 200px;
     z-index: 1;
-}
-
-/* Top line segment - sharp CSS line */
-.timelineLineTop {
-    flex: 1;
-    width: 2px;
-    background-color: rgba(255, 186, 32, 0.25);
-}
-
-/* Bottom line segment - sharp CSS line */
-.timelineLineBottom {
-    flex: 1;
-    width: 2px;
-    background-color: rgba(255, 186, 32, 0.25);
 }
 
 /* Circle node */
@@ -518,24 +509,21 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    padding: 0 56px;
 }
 
 /* ── Each card ── */
 .accoladeCard {
-    background-color: #161616;
-    border: 1px solid rgba(81, 69, 50, 0.30);
-    border-radius: 10px;
-    padding: 28px 28px 32px;
+    background-color: #131313;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 32px;
+    height: 178px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 16px;
-    transition: border-color 0.25s ease, background-color 0.25s ease;
-}
-
-.accoladeCard:hover {
-    background-color: #1a1a1a;
-    border-color: rgba(255, 186, 32, 0.20);
 }
 
 /* ── Icon ── */
@@ -586,6 +574,230 @@
 
 
 /* ============================================================
+   CLOSING CTA SECTION
+   ============================================================ */
+
+.closingCTA {
+    position: relative;
+    min-height: 508px;
+    display: flex;
+    align-items: center;
+    background-image: url("/images/About/contact_overlay.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Dark tinted overlay — matches Figma #131313 @ 80% */
+.closingCTAOverlay {
+    position: absolute;
+    inset: 0;
+}
+
+/* Subtle amber centre glow */
+.closingCTA::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 50% 50%,
+            rgba(255, 184, 0, 0.07) 0%,
+            transparent 65%);
+    pointer-events: none;
+}
+
+/* ── Inner content wrapper ── */
+.closingCTAInner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+/* ── Heading ── */
+.closingCTATitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56PX;
+    color: #E5E2E1;
+    margin: 0 0 24px 0;
+    white-space: nowrap;
+}
+
+.closingCTAHighlight {
+    color: #FFDCA1;
+}
+
+/* ── Subtitle ── */
+.closingCTASubtitle {
+    font-family: var(--font-hanken-grotesk);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #D5C4AB;
+    margin: 0 auto 40px;    
+}
+
+/* ── CTA Button ── */
+.closingCTAButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-hanken-grotesk);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+    color: #412D00;
+    text-decoration: none;
+    background-color: #FFDCA1;
+    border: none;
+    border-radius: 9999px;
+    padding: 18px 40px;
+
+    box-shadow:
+        0px 8px 10px -6px rgba(255, 220, 161, 0.20),
+        0px 20px 25px -5px rgba(255, 220, 161, 0.20);
+    transition: background-color 0.22s ease, box-shadow 0.22s ease, transform 0.18s ease;
+}
+
+
+/* ============================================================
+   OUR PRESENCE SECTION
+   ============================================================ */
+
+.presenceSection {
+    background-color: #0E0E0E;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── Two-column grid ── */
+.presenceGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
+}
+
+/* ── Left: map card ── */
+.presenceMapCard {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #131313;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0px 0px 30px 0px #FFBA2026;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.presenceMapImageFrame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.presenceMapImage {
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Subtle vignette gradient over the map */
+.presenceMapGradient {
+    position: absolute;
+    inset: 32px;
+    background: radial-gradient(ellipse 80% 70% at 50% 50%,
+            transparent 40%,
+            rgba(14, 14, 14, 0.55) 100%);
+    pointer-events: none;
+}
+
+/* ── Right: content ── */
+.presenceContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Label */
+.presenceLabel {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #FFDCA1;
+    margin: 0 0 20px 0;
+}
+
+/* Title */
+.presenceTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: 0px;
+    color: #E5E2E1;
+    margin: 0 0 24px 0;
+}
+
+/* Description */
+.presenceDescription {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #D5C4AB;
+    margin: 0 0 40px 0;
+}
+
+/* ── States grid ── */
+.presenceStatesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 0;
+}
+
+.presenceStatesCol {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.presenceStateItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.presenceLocationIcon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+    opacity: 0.85;
+}
+
+.presenceStateName {
+    font-family: var(--font-hanken-grotesk);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #E5E2E1;
+}
+
+
+/* ============================================================
    GRIDX APP CALLOUT SECTION
    ============================================================ */
 
@@ -611,12 +823,14 @@
 /* ── Decorative bg icon (top-right) ── */
 .appCalloutBgIcon {
     position: absolute;
-    top: 60px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 0;
     width: 250px;
     height: 367px;
     pointer-events: none;
     z-index: 0;
+    opacity: 0.4;
 }
 
 .appCalloutBgIconImg {
@@ -716,9 +930,9 @@
 .appCalloutImageWrapper {
     position: relative;
     width: 300px;
-    height: 164px;
+    height: 163.47px;
     flex-shrink: 0;
-    border-radius: 10px;
+    border-radius: 0px;
     overflow: hidden;
     z-index: 1;
     box-shadow: 0 25px 25px rgba(0, 0, 0, 0.15);
@@ -729,244 +943,15 @@
 }
 
 
-/* ============================================================
-   OUR PRESENCE SECTION
-   ============================================================ */
-
-.presenceSection {
-    background-color: #0E0E0E;
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-/* ── Two-column grid ── */
-.presenceGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    align-items: center;
-}
-
-/* ── Left: map card ── */
-.presenceMapCard {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    border-radius: 16px;
-    overflow: visible;
-    background-color: #111111;
-    border: 1px solid rgba(81, 69, 50, 0.25);
-}
-
-.presenceMapImage {
-    object-fit: cover;
-    object-position: center;
-}
-
-/* Subtle vignette gradient over the map */
-.presenceMapGradient {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 80% 70% at 50% 50%,
-            transparent 40%,
-            rgba(14, 14, 14, 0.55) 100%);
-    pointer-events: none;
-}
-
-/* ── Right: content ── */
-.presenceContent {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-/* Label */
-.presenceLabel {
-    font-family: var(--font-jetbrains-mono), monospace;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
-    color: #FFDCA1;
-    margin: 0 0 20px 0;
-}
-
-/* Title */
-.presenceTitle {
-    font-family: var(--font-space-grotesk);
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 56px;
-    letter-spacing: 0px;
-    color: #E5E2E1;
-    margin: 0 0 24px 0;
-}
-
-/* Description */
-.presenceDescription {
-    font-family: var(--font-hanken-grotesk);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0px;
-    color: #D5C4AB;
-    margin: 0 0 40px 0;
-}
-
-/* ── States grid ── */
-.presenceStatesGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 0;
-}
-
-.presenceStatesCol {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.presenceStateItem {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.presenceLocationIcon {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-    flex-shrink: 0;
-    opacity: 0.85;
-}
-
-.presenceStateName {
-    font-family: var(--font-hanken-grotesk);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0px;
-    color: #E5E2E1;
-}
-
-
-/* ============================================================
-   CLOSING CTA SECTION
-   ============================================================ */
-
-.closingCTA {
-    position: relative;
-    min-height: 508px;
-    display: flex;
-    align-items: center;
-    background-image: url("/images/About/contact_overlay.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-
-/* Dark tinted overlay — matches Figma #131313 @ 80% */
-.closingCTAOverlay {
-    position: absolute;
-    inset: 0;
-}
-
-/* Subtle amber centre glow */
-.closingCTA::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 70% at 50% 50%,
-            rgba(255, 184, 0, 0.07) 0%,
-            transparent 65%);
-    pointer-events: none;
-}
-
-/* ── Inner content wrapper ── */
-.closingCTAInner {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 80px 0;
-}
-
-/* ── Heading ── */
-.closingCTATitle {
-    font-family: var(--font-space-grotesk);
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.8px;
-    color: #E5E2E1;
-    margin: 0 0 24px 0;
-    white-space: nowrap;
-}
-
-.closingCTAHighlight {
-    color: #FFDCA1;
-}
-
-/* ── Subtitle ── */
-.closingCTASubtitle {
-    font-family: var(--font-hanken-grotesk);
-    font-size: 16px;
-    line-height: 1.75;
-    color: #B0A090;
-    margin: 0 auto 40px;
-    /* Prevent browser auto-detection of links/phone numbers */
-    pointer-events: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: text;
-    user-select: text;
-}
-
-/* ── CTA Button ── */
-.closingCTAButton {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-hanken-grotesk);
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    color: #412D00;
-    text-decoration: none;
-    /* Solid warm amber fill — matches Figma visual */
-    background-color: #FFDCA1;
-    border: none;
-    border-radius: 9999px;
-    padding: 18px 40px;
-    /* Figma drop shadows: #FFDCA1 @ 20% */
-    box-shadow:
-        0px 8px 10px -6px rgba(255, 220, 161, 0.20),
-        0px 20px 25px -5px rgba(255, 220, 161, 0.20);
-    transition: background-color 0.22s ease, box-shadow 0.22s ease, transform 0.18s ease;
-}
-
-.closingCTAButton:hover {
-    background-color: #ffe8bb;
-    box-shadow:
-        0px 8px 16px -6px rgba(255, 220, 161, 0.40),
-        0px 24px 32px -5px rgba(255, 220, 161, 0.35);
-    transform: translateY(-2px);
-}
-
-.closingCTAButton:active {
-    transform: translateY(0);
-    background-color: #f5cc90;
-}
-
 
 /* ============================================================
    MEDIA RESPONSIVE CODE
    ============================================================ */
 
-/* ── Responsive Banner ── */
-@media (max-width: 900px) {
+/* ── 1024px — Tablet ── */
+@media (max-width: 1024px) {
+
+    /* Banner */
     .banner {
         height: 500px;
         margin-top: 80px;
@@ -982,42 +967,21 @@
         font-size: 18px;
         line-height: 26px;
     }
-}
 
-@media (max-width: 600px) {
-    .banner {
-        height: 420px;
-    }
-
-    .bannerTitle,
-    .bannerTitle span {
-        font-size: 38px;
-        line-height: 42px;
-        letter-spacing: -0.5px;
-    }
-
-    .bannerDescription {
-        font-size: 15px;
-        line-height: 22px;
-        margin-top: 16px;
-    }
-}
-
-/* ── Responsive Our Journey ── */
-@media (max-width: 900px) {
+    /* Our Journey */
     .ourJourney {
         padding: 72px 0;
     }
 
     .ourJourneyInner {
         flex-direction: column;
-        gap: 56px;
+        gap: 48px;
     }
 
     .ourJourneyImageContainer {
         flex: none;
         width: 100%;
-        max-width: 560px;
+        max-width: 100%;
         height: 300px;
     }
 
@@ -1030,10 +994,109 @@
         font-size: 16px;
         line-height: 26px;
     }
+
+    /* Vision & Mission */
+    .visionMissionGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Stats */
+    .statsRow {
+        flex-wrap: wrap;
+        gap: 40px 0;
+    }
+
+    .statItem {
+        flex: 0 0 50%;
+    }
+
+    /* Milestone */
+    .milestoneTitle {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    /* Accolades */
+    .accoladesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .accoladesTitle {
+        font-size: 38px;
+    }
+
+    /* App Callout */
+    .appCalloutCard {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 48px 40px;
+        gap: 40px;
+    }
+
+    .appCalloutImageWrapper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .appCalloutTitle {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    /* Our Presence */
+    .presenceGrid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .presenceMapCard {
+        aspect-ratio: 16 / 9;
+    }
+
+    .presenceTitle {
+        font-size: 36px;
+        line-height: 1.2;
+    }
 }
 
-/* ── Responsive Vision & Mission ── */
+/* ── 768px — Mobile ── */
 @media (max-width: 768px) {
+
+    /* Banner */
+    .banner {
+        height: 420px;
+    }
+
+    .bannerTitle,
+    .bannerTitle span {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .bannerDescription {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* Our Journey */
+    .ourJourney {
+        padding: 60px 0;
+    }
+
+    .ourJourneyInner {
+        gap: 40px;
+    }
+
+    .ourJourneyImageContainer {
+        height: 260px;
+    }
+
+    .ourJourneyTitle {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    /* Vision & Mission */
     .visionMissionGrid {
         grid-template-columns: 1fr;
     }
@@ -1045,42 +1108,35 @@
     .vmCardTitle {
         font-size: 22px;
     }
-}
 
-/* ── Responsive Stats Strip ── */
-@media (max-width: 900px) {
+    /* Stats */
     .statsRow {
-        flex-wrap: wrap;
-        gap: 40px 0;
+        flex-direction: column;
     }
 
     .statItem {
-        flex: 0 0 50%;
-    }
-}
-
-@media (max-width: 480px) {
-    .statItem {
-        flex: 0 0 100%;
+        flex: 1 1 100%;
     }
 
     .statValue {
-        font-size: 36px;
-        line-height: 1.1;
+        font-size: 40px;
     }
-}
 
-/* ── Responsive Milestone Timeline (hide spine and stack year above card) ── */
-@media (max-width: 768px) {
-    .milestoneTitle {
-        font-size: 36px;
-        line-height: 1.2;
+    /* Milestone */
+    .milestoneSection {
+        padding: 72px 0 80px;
     }
 
     .milestoneHeader {
         margin-bottom: 56px;
     }
 
+    .milestoneTitle {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    /* Timeline — stack vertically */
     .timelineRow {
         display: flex;
         flex-direction: column;
@@ -1092,13 +1148,15 @@
         margin-bottom: 0;
     }
 
-    /* Reverse the flow on right-side rows so Year (last child) renders first */
     .timelineRowRight {
         flex-direction: column-reverse;
     }
 
-    /* Hide spine completely */
     .timelineSpine {
+        display: none;
+    }
+
+    .timelineDivider {
         display: none;
     }
 
@@ -1109,7 +1167,6 @@
         width: 100%;
     }
 
-    /* Solid gold styling for mobile year */
     .timelineYear {
         font-size: 36px;
         line-height: 1.2;
@@ -1127,63 +1184,26 @@
         font-size: 24px;
         line-height: 32px;
     }
-}
 
-/* ── Responsive Accolades ── */
-@media (max-width: 900px) {
-    .accoladesGrid {
-        grid-template-columns: repeat(2, 1fr);
+    /* Accolades */
+    .accoladesSection {
+        padding: 72px 0 80px;
     }
 
     .accoladesTitle {
-        font-size: 38px;
-    }
-}
-
-@media (max-width: 560px) {
-    .accoladesSection {
-        padding: 72px 0 80px;
+        font-size: 32px;
+        line-height: 1.2;
     }
 
     .accoladesGrid {
         grid-template-columns: 1fr;
     }
 
-    .accoladesTitle {
-        font-size: 30px;
-        line-height: 1.2;
-    }
-
     .accoladeCard {
         padding: 22px 20px 24px;
     }
-}
 
-/* ── Responsive App Callout ── */
-@media (max-width: 900px) {
-    .appCalloutCard {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 48px 40px;
-        gap: 40px;
-    }
-
-    .appCalloutImageWrapper {
-        width: 100%;
-        height: 200px;
-    }
-
-    .appCalloutTitle {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-}
-
-@media (max-width: 560px) {
-    .appCalloutWrapper {
-        padding: 48px 0;
-    }
-
+    /* App Callout */
     .appCalloutCard {
         padding: 36px 24px;
     }
@@ -1195,26 +1215,8 @@
     .appCalloutDescription {
         font-size: 16px;
     }
-}
 
-/* ── Responsive Presence ── */
-@media (max-width: 900px) {
-    .presenceGrid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-
-    .presenceMapCard {
-        aspect-ratio: 16 / 9;
-    }
-
-    .presenceTitle {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-}
-
-@media (max-width: 560px) {
+    /* Our Presence */
     .presenceSection {
         padding: 72px 0;
     }
@@ -1227,12 +1229,14 @@
         font-size: 16px;
         line-height: 26px;
     }
-}
 
-/* ── Responsive Closing CTA ── */
-@media (max-width: 768px) {
+    /* Closing CTA */
     .closingCTA {
         min-height: 420px;
+    }
+
+    .closingCTAInner {
+        padding: 60px 0;
     }
 
     .closingCTATitle {
@@ -1246,13 +1250,108 @@
     }
 }
 
-@media (max-width: 480px) {
-    .closingCTATitle {
+/* ── 600px — Small Mobile ── */
+@media (max-width: 600px) {
+
+    .banner {
+        height: 380px;
+    }
+
+    .bannerTitle,
+    .bannerTitle span {
+        font-size: 34px;
+        line-height: 40px;
+        letter-spacing: -0.5px;
+    }
+
+    .bannerDescription {
+        font-size: 15px;
+        line-height: 22px;
+        margin-top: 16px;
+    }
+
+    .ourJourneyTitle {
         font-size: 28px;
+    }
+
+    .ourJourneyText {
+        font-size: 15px;
+    }
+
+    .milestoneTitle {
+        font-size: 28px;
+    }
+
+    .appCalloutWrapper {
+        padding: 48px 0;
+    }
+
+    .appCalloutTitle {
+        font-size: 24px;
+    }
+}
+
+/* ── 480px — Extra Small Mobile ── */
+@media (max-width: 480px) {
+
+    .banner {
+        height: 340px;
+    }
+
+    .bannerTitle,
+    .bannerTitle span {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .ourJourneyImageContainer {
+        height: 220px;
+    }
+
+    .statItem {
+        flex: 0 0 100%;
+    }
+
+    .statValue {
+        font-size: 36px;
+        line-height: 1.1;
+    }
+
+    .accoladesTitle {
+        font-size: 26px;
+    }
+
+    .closingCTATitle {
+        font-size: 24px;
     }
 
     .closingCTAButton {
         padding: 14px 28px;
         font-size: 14px;
     }
+
+    .presenceTitle {
+        font-size: 24px;
+    }
+
+    .timelineCardTitle {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .timelineYear {
+        font-size: 28px;
+    }
+
+    .vmCardTitle {
+        font-size: 20px;
+    }
+
+    .appCalloutTitle {
+        font-size: 22px;
+    }
+}
+
+.aboutPage {
+    background-color: #131313;
 }

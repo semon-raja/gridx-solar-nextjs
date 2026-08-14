@@ -5,6 +5,7 @@ export default function Hero(){
     return (
         <section className={styles.hero}>
             <div className={styles.heroOverlay}></div>
+            <div className={styles.heroGradient}></div>
                 <div className={styles.container}>
                     <div className={styles.heroContent}>
                                 <p className={styles.heroBadge}>

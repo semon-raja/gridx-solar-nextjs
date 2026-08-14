@@ -5,6 +5,8 @@ const achievements = [
   {
     icon: "/images/Homepage/cup.png",
     alt: "PV Port Solar Project",
+    width: 22.5,
+    height: 22.5,
     title:(
         <>
           Successfully Completed India&apos;s
@@ -16,8 +18,10 @@ const achievements = [
     )
   },
   {
-    icon: "/images/Homepage/verified.png",
+    icon: "/images/Homepage/verified_achi.png",
     alt: "Most Bankable Company",
+    width: 27.5,
+    height: 26.25,
     title:(
         <>
           Most Bankable Company - BBB+ <br/> grade Equivalent
@@ -27,6 +31,8 @@ const achievements = [
   {
     icon: "/images/Homepage/rev.png",
     alt: "Revenue Milestone",
+    width: 25,
+    height: 15,
     title:(
         <>
           Revenue Crossing 350 million <br/> INR
@@ -36,11 +42,15 @@ const achievements = [
   {
     icon: "/images/Homepage/bage.png",
     alt: "Company of the Year",
+    width: 20,
+    height: 26.25,
     title: "Company of the Year - Energy Storage Project Integration 2024",
   },
   {
     icon: "/images/Homepage/ent.png",
     alt: "Young Entrepreneur 2017",
+    width: 20,
+    height: 20,
     title: "Young Entrepreneur 2017",
   },
 ];
@@ -61,8 +71,9 @@ export default function Achievements (){
                     <Image
                         src={item.icon}
                         alt={item.alt}
-                        width={27}
-                        height={26}
+                        width={Math.ceil(item.width)}
+                        height={Math.ceil(item.height)}
+                        style={{ width: item.width, height: item.height }}
                     />
 
                     <p>{item.title}</p>
