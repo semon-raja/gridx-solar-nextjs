@@ -1480,21 +1480,37 @@
     color: #FFDCA1;
 }
 
-/* Full-width Contact Us at the bottom */
+/* Contact Us link in mobile menu — styled like other nav links */
 .mobileContactButton {
-    display: block;
-    width: 100%;
-    padding: 18px 24px;
-    border: none;
-    border-radius: 14px;
-    background: #FFB800;
-    color: #1a1100;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 32px;
     text-decoration: none;
+    color: #E5E2E1;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(81, 69, 50, 0.20);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border-radius: 0;
+    width: 100%;
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.mobileContactButton::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid rgba(213, 196, 171, 0.4);
+    border-top: 2px solid rgba(213, 196, 171, 0.4);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+.mobileContactButton:hover {
+    color: #FFDCA1;
 }
 
 /* ============================================================
@@ -2381,17 +2397,21 @@
     }
 
     .newsletter {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
     }
 
     .newsletter input {
-        width: 100%;
+        flex: 1;
+        width: auto;
+        min-width: 0;
     }
 
     .newsletter button {
-        width: 100%;
+        width: 47px;
+        height: 47px;
+        flex-shrink: 0;
         border-radius: 8px;
     }
 

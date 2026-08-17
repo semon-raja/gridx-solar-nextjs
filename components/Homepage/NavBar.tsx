@@ -101,16 +101,14 @@ export default function Navbar() {
                     <Link href="/Projects" onClick={() => setMenuOpen(false)}>Projects</Link>
                     <Link href="/Partners" onClick={() => setMenuOpen(false)}>Partners</Link>
                     <Link href="/News" onClick={() => setMenuOpen(false)}>News</Link>
+                    <Link
+                        href="/contact"
+                        className={styles.mobileContactButton}
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        Contact Us
+                    </Link>
                 </div>
-
-                
-                <Link
-                    href="/contact"
-                    className={styles.mobileContactButton}
-                    onClick={() => setMenuOpen(false)}
-                >
-                    Contact Us
-                </Link>
             </div>
         </>
     );
