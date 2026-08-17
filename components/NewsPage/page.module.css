@@ -130,37 +130,34 @@
    RESPONSIVE — News Hero
    ============================================================ */
 
+/* Tablet */
 @media (max-width: 1024px) {
-    .newsHeroTitle {
+    .newsHero {
+        height: auto;
+        min-height: 420px;
+        margin-top: 72px;
+    }
+
+    .newsHeroContent {
         width: auto;
         max-width: 90%;
+    }
+
+    .newsHeroTitle {
+        width: auto;
+        max-width: 100%;
         height: auto;
-        font-size: 56px;
-        line-height: 64px;
+        font-size: 52px;
+        line-height: 60px;
         letter-spacing: -1px;
         white-space: normal;
     }
 
     .newsHeroDescription {
-        width: min(648px, 90%);
-    }
-}
-
-@media (max-width: 768px) {
-    .newsHero {
-        height: 440px;
-    }
-
-    .newsHeroTitle {
-        font-size: 48px;
-        line-height: 56px;
-        letter-spacing: -0.8px;
-    }
-
-    .newsHeroDescription {
+        width: auto;
+        max-width: 90%;
         font-size: 16px;
-        line-height: 24px;
-        width: min(560px, 90%);
+        line-height: 26px;
     }
 
     .newsHeroDecoration {
@@ -171,31 +168,38 @@
     }
 }
 
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 400px) {
     .newsHero {
-        height: 380px;
+        height: auto;
+        min-height: 340px;
+        margin-top: 64px;
+    }
+
+    .newsHeroContent {
+        max-width: calc(100% - 32px);
+        gap: 16px;
+        padding: 0 16px;
     }
 
     .newsHeroTitle {
-        max-width: calc(100% - 32px);
-        height: auto;
-        font-size: 40px;
-        line-height: 48px;
-        letter-spacing: -0.6px;
+        font-size: 30px;
+        line-height: 38px;
+        letter-spacing: -0.5px;
     }
 
     .newsHeroDescription {
-        width: calc(100% - 40px);
-        height: auto;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 22px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .newsHeroDecoration {
-        width: 240px;
-        height: 240px;
-        top: -80px;
-        right: -40px;
+        width: 200px;
+        height: 200px;
+        top: -60px;
+        right: -30px;
     }
 }
 
@@ -630,7 +634,12 @@
    RESPONSIVE — News Grid
    ============================================================ */
 
+/* Tablet */
 @media (max-width: 1024px) {
+    .newsGridSection {
+        padding: 48px 0 72px;
+    }
+
     .newsGrid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -638,47 +647,77 @@
 
     .featuredCard {
         grid-column: span 2;
+        min-height: 360px;
+    }
+
+    .featuredCardContent {
+        padding: 28px;
     }
 
     .featuredCardTitle {
-        font-size: 36px;
-        line-height: 44px;
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .featuredCardDesc {
+        max-width: 100%;
     }
 }
 
-@media (max-width: 768px) {
+/* Mobile */
+@media (max-width: 400px) {
     .newsGridSection {
-        padding: 40px 0 64px;
+        padding: 32px 0 48px;
+    }
+
+    .newsGridContainer {
+        max-width: calc(100% - 32px);
     }
 
     .newsGrid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        gap: 16px;
+        gap: 14px;
     }
 
     .featuredCard {
         grid-column: span 1;
-        min-height: 400px;
+        min-height: 320px;
+    }
+
+    .featuredCardContent {
+        padding: 20px;
     }
 
     .featuredCardTitle {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .featuredCardDesc {
+        font-size: 14px;
+        line-height: 22px;
+        max-width: 100%;
     }
 
     .textCard {
-        min-height: 320px;
-    }
-}
-
-@media (max-width: 480px) {
-    .featuredCardTitle {
-        font-size: 24px;
-        line-height: 32px;
+        padding: 24px;
+        min-height: auto;
     }
 
     .standardCardImageWrap {
         flex: 0 0 160px;
+    }
+
+    .pagination {
+        margin-top: 32px;
+        gap: 6px;
+    }
+
+    .paginationBtn,
+    .paginationArrow {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
     }
 }

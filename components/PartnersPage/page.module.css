@@ -129,22 +129,13 @@
    RESPONSIVE — Banner
    ============================================================ */
 
+/* Tablet */
 @media (max-width: 1024px) {
     .banner {
-        height: 680px;
-    }
-
-    .bannerTitle {
-        font-size: 60px;
-        line-height: 74px;
-    }
-}
-
-@media (max-width: 768px) {
-    .banner {
         height: auto;
-        min-height: 600px;
+        min-height: 580px;
         padding-bottom: 60px;
+        margin-top: 72px;
         background-position: 70% center;
     }
 
@@ -161,8 +152,8 @@
     }
 
     .bannerTitle {
-        font-size: 44px;
-        line-height: 56px;
+        font-size: 52px;
+        line-height: 64px;
     }
 
     .bannerDescription {
@@ -171,28 +162,31 @@
     }
 }
 
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 400px) {
     .banner {
-        min-height: 560px;
+        min-height: 480px;
+        margin-top: 64px;
     }
 
     .bannerTitle {
-        font-size: 34px;
-        line-height: 44px;
+        font-size: 30px;
+        line-height: 40px;
     }
 
     .bannerEyebrow {
-        font-size: 13px;
-        letter-spacing: 1.2px;
+        font-size: 12px;
+        letter-spacing: 1px;
     }
 
     .bannerDescription {
-        font-size: 15px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 22px;
+        max-width: 100%;
     }
 
     .bannerSubtitle {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
@@ -341,21 +335,10 @@
    RESPONSIVE — Trusted Partners
    ============================================================ */
 
+/* Tablet */
 @media (max-width: 1024px) {
-    .partnersHeading {
-        white-space: normal;
-        font-size: 40px;
-        line-height: 48px;
-    }
-
-    .partnersGrid {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
     .trustedPartnersSection {
-        padding: 64px 0;
+        padding: 60px 0;
     }
 
     .partnersHeader {
@@ -363,14 +346,16 @@
         gap: 20px;
     }
 
+    .partnersHeading {
+        white-space: normal;
+        max-width: 100%;
+        font-size: 36px;
+        line-height: 44px;
+    }
+
     .partnersBadge {
         width: auto;
         min-width: 200px;
-    }
-
-    .partnersHeading {
-        font-size: 32px;
-        line-height: 40px;
     }
 
     .partnersGrid {
@@ -384,22 +369,35 @@
     }
 }
 
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 400px) {
     .trustedPartnersSection {
         padding: 48px 0;
     }
 
-    .partnersGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .partnerCard {
-        width: 100%;
+    .trustedContainer {
+        max-width: calc(100% - 32px);
+        gap: 32px;
     }
 
     .partnersHeading {
         font-size: 26px;
         line-height: 34px;
+    }
+
+    .partnersDescription {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .partnersGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .partnerCard {
+        width: 100%;
+        padding: 24px;
     }
 }
 
@@ -511,28 +509,23 @@
    RESPONSIVE — Closing CTA
    ============================================================ */
 
-@media (max-width: 1280px) {
+/* Tablet */
+@media (max-width: 1024px) {
+    .closingSection {
+        padding: 48px 0 72px;
+    }
+
     .closingCard {
         height: auto;
-        min-height: 300px;
-        padding: 72px 64px;
-    }
-}
-
-@media (max-width: 768px) {
-    .closingSection {
-        padding: 48px 0 64px;
-    }
-
-    .closingCard {
-        min-height: 260px;
-        padding: 56px 40px;
+        min-height: 280px;
+        padding: 60px 48px;
     }
 
     .closingTitle {
         white-space: normal;
         font-size: 36px;
         line-height: 44px;
+        max-width: 100%;
     }
 
     .closingDescription {
@@ -551,19 +544,34 @@
     }
 }
 
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 400px) {
+    .closingSection {
+        padding: 40px 0 56px;
+    }
+
     .closingCard {
         max-width: calc(100% - 32px);
-        padding: 48px 24px;
+        padding: 40px 24px;
         border-radius: 20px;
+        min-height: auto;
     }
 
     .closingTitle {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .closingDescription {
+        font-size: 14px;
+        line-height: 22px;
     }
 
     .closingDivider {
-        width: 64px;
+        width: 56px;
+    }
+
+    .closingContent {
+        gap: 20px;
     }
 }

@@ -612,61 +612,35 @@
 }
 
 /* =========================================================
-   RESPONSIVE LAYOUTS — Tablet & Mobile
+   RESPONSIVE LAYOUTS
    ========================================================= */
 
-/* ── Tablet / Small Desktop (max-width: 1200px) ── */
-@media (max-width: 1200px) {
-    .contactLayout {
-        flex-direction: column;
-        align-items: center;
-        gap: 60px;
-    }
+/* Tablet */
+@media (max-width: 1024px) {
 
-    .contactInfoCol {
-        max-width: 690px;
-    }
-
-    .card {
-        max-width: 690px;
-    }
-
-    .title,
-    .subtitle,
-    .form {
-        max-width: 100%;
-    }
-}
-
-/* ── Tablet / Mobile (max-width: 768px) ── */
-@media (max-width: 768px) {
+    /* ── Hero ── */
     .contactHero {
         height: auto;
-        min-height: 400px;
+        min-height: 420px;
         padding-top: 60px;
         padding-bottom: 60px;
-        margin-top: 127px;
+        margin-top: 72px;
     }
 
-    .heroHeading {
-        font-size: 48px;
-        line-height: 60px;
-        letter-spacing: -1px;
-    }
-
+    .heroHeading,
     .heroHeading span {
-        font-size: 48px;
-        line-height: 60px;
+        font-size: 52px;
+        line-height: 64px;
         letter-spacing: -1px;
     }
 
     .heroDescription {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 26px;
         max-width: 100%;
-        padding: 0 16px;
     }
 
+    /* ── Section ── */
     .contactSection {
         padding: 60px 0 80px;
     }
@@ -675,53 +649,105 @@
         padding: 0 24px;
     }
 
+    /* ── Layout ── */
+    .contactLayout {
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .contactInfoCol {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .title,
+    .subtitle,
+    .form {
+        max-width: 100%;
+    }
+
+    /* ── Head Office Card ── */
     .headOfficeCard {
+        max-width: 100%;
         padding: 32px;
     }
 
     .headOfficeTitle {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 26px;
+        line-height: 34px;
     }
 
+    /* ── Bento ── */
     .contactBento {
+        max-width: 100%;
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
+    }
+
+    /* ── Locations ── */
+    .locationsSection {
+        max-width: 100%;
+    }
+
+    .locationsTitle {
+        font-size: 26px;
+        line-height: 34px;
     }
 
     .locationsGrid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .card {
-        padding: 32px;
-    }
 }
 
-/* ── Small Mobile (max-width: 480px) ── */
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 400px) {
+
+    /* ── Hero ── */
     .contactHero {
-        min-height: 360px;
+        min-height: 340px;
+        padding-top: 48px;
+        padding-bottom: 48px;
+        margin-top: 64px;
     }
 
     .heroEyebrow {
-        font-size: 14px;
+        font-size: 12px;
+        letter-spacing: 1px;
     }
 
-    .heroHeading {
-        font-size: 40px;
-        line-height: 48px;
-    }
-
+    .heroHeading,
     .heroHeading span {
-        font-size: 40px;
-        line-height: 48px;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: -0.5px;
+    }
+
+    .heroDescription {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 0 8px;
+    }
+
+    /* ── Section ── */
+    .contactSection {
+        padding: 48px 0 60px;
     }
 
     .contactContainer {
         padding: 0 16px;
     }
 
+    .contactLayout {
+        gap: 32px;
+    }
+
+    /* ── Head Office Card ── */
     .headOfficeCard {
         padding: 24px;
         gap: 24px;
@@ -732,34 +758,58 @@
     }
 
     .headOfficeBadge {
-        width: 44px;
-        height: 48px;
+        width: 40px;
+        height: 44px;
         padding: 8px;
     }
 
     .headOfficeTitle {
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 20px;
+        line-height: 28px;
     }
 
+    .addressBody {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    /* ── Bento ── */
+    .bentoCard {
+        padding: 20px;
+    }
+
+    .phoneNumber {
+        font-size: 14px;
+    }
+
+    .digitalLink {
+        font-size: 13px;
+        word-break: break-all;
+    }
+
+    /* ── Locations ── */
     .locationsTitle {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 20px;
+        line-height: 28px;
+        white-space: normal;
     }
 
     .locationsGrid {
         grid-template-columns: 1fr;
     }
 
+    /* ── Form Card ── */
     .card {
-        padding: 24px;
+        padding: 24px 20px;
         gap: 24px;
     }
 
     .title {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .subtitle {
+        font-size: 14px;
     }
 }
-
-

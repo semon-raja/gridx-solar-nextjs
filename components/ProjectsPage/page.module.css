@@ -557,37 +557,31 @@
 
 /* ── Geo Responsive ──────────────────────────────────── */
 
-@media (max-width: 1200px) {
-    .geoRight {
-        flex: 0 0 480px;
-        width: 480px;
-        max-width: 480px;
-    }
-    .geoMapWrapper {
-        width: 100%;
-        min-height: 460px;
-        padding-bottom: 280px;
-    }
-    .geoCard {
-        width: auto;
-        right: 32px;
-        left: 32px;
-        top: 32px;
-        height: auto;
-        min-height: 120px;
-    }
-}
-
+/* Tablet */
 @media (max-width: 1024px) {
-    .geoLeft {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 100%;
+    .geoSection {
+        padding: 64px 0 72px;
     }
     .geoInner {
         flex-direction: column;
         gap: 48px;
         justify-content: flex-start;
+    }
+    .geoLeft {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 100%;
+    }
+    .geoTitle {
+        font-size: 36px;
+        line-height: 44px;
+        max-width: 100%;
+    }
+    .statesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stateItem {
+        width: 100%;
     }
     .geoRight {
         flex: 0 0 auto;
@@ -599,12 +593,6 @@
         min-height: 460px;
         padding-bottom: 300px;
     }
-    .statesGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .stateItem {
-        width: 100%;
-    }
     .geoCard {
         width: auto;
         left: 32px;
@@ -615,24 +603,33 @@
     }
 }
 
-@media (max-width: 768px) {
+/* Mobile */
+@media (max-width: 400px) {
     .geoSection {
-        padding: 60px 0;
+        padding: 48px 0;
     }
     .geoTitle {
-        font-size: 36px;
-        line-height: 44px;
-        max-width: 100%;
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .geoDescription {
+        font-size: 14px;
+        line-height: 22px;
     }
     .statesGrid {
         grid-template-columns: 1fr;
     }
-    .stateItem {
-        width: 100%;
+    .geoMapWrapper {
+        min-height: 380px;
+        padding: 16px;
+        padding-bottom: 240px;
     }
     .geoCard {
-        padding: 20px;
-        height: auto;
+        left: 16px;
+        right: 16px;
+        top: 16px;
+        padding: 16px;
+        gap: 12px;
     }
 }
 
@@ -844,7 +841,15 @@
 
 /* ── Gallery Responsive ───────────────────────────────── */
 
-@media (max-width: 900px) {
+/* Tablet */
+@media (max-width: 1024px) {
+    .gallerySection {
+        padding: 64px 0;
+    }
+    .galleryTitle {
+        font-size: 32px;
+        line-height: 40px;
+    }
     .galleryGrid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
@@ -865,13 +870,14 @@
     }
 }
 
-@media (max-width: 600px) {
+/* Mobile */
+@media (max-width: 400px) {
     .gallerySection {
-        padding: 60px 0;
+        padding: 48px 0;
     }
     .galleryTitle {
-        font-size: 30px;
-        line-height: 38px;
+        font-size: 26px;
+        line-height: 34px;
     }
     .galleryGrid {
         grid-template-columns: 1fr;
@@ -1045,19 +1051,44 @@
 
 /* ── CTA Responsive ────────────────────────────────────── */
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 1024px) {
+    .ctaOuter {
+        padding-bottom: 72px;
+    }
     .ctaCard {
-        padding: 60px 32px;
-        border-radius: 20px;
+        padding: 64px 40px;
+        border-radius: 24px;
         min-height: auto;
     }
     .ctaTitle {
-        font-size: 36px;
-        line-height: 44px;
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+    .ctaOuter {
+        padding-bottom: 48px;
+    }
+    .ctaCard {
+        padding: 40px 24px;
+        border-radius: 20px;
+        gap: 24px;
+    }
+    .ctaTitle {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .ctaSubtitle {
+        font-size: 14px;
+        line-height: 22px;
     }
     .ctaButtons {
         flex-direction: column;
         width: 100%;
+        gap: 16px;
     }
     .ctaBtnPrimary,
     .ctaBtnSecondary {
@@ -1066,64 +1097,20 @@
     }
 }
 
-@media (max-width: 480px) {
-    .ctaOuter {
-        padding-bottom: 60px;
-    }
-    .ctaCard {
-        padding: 48px 24px;
-    }
-    .ctaTitle {
-        font-size: 30px;
-        line-height: 38px;
-    }
-    .ctaSubtitle {
-        font-size: 14px;
-    }
-}
-
 
 /* ============================================================
    RESPONSIVE STYLES
    ============================================================ */
 
-
+/* Tablet */
 @media (max-width: 1024px) {
-    .bannerTitle {
-        font-size: 56px;
-        line-height: 64px;
-    }
 
-    .banner {
-        height: 620px;
-    }
-
-    /* Portfolio */
-    .portfolioGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .portfolioHeader {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .filterTabs {
-        justify-content: flex-start;
-    }
-
-    /* Industries */
-    .industriesGrid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
+    /* Banner */
     .banner {
         height: auto;
-        min-height: 600px;
+        min-height: 560px;
         padding-bottom: 60px;
-        /* On mobile the overlay covers full width since there is no right-side photo room */
+        margin-top: 72px;
         background-position: 70% center;
     }
 
@@ -1141,13 +1128,14 @@
     }
 
     .bannerTitle {
-        font-size: 40px;
-        line-height: 48px;
+        font-size: 48px;
+        line-height: 56px;
     }
 
     .bannerDescription {
         max-width: 100%;
-        font-size: 15px;
+        font-size: 17px;
+        line-height: 26px;
     }
 
     .statsRow {
@@ -1162,59 +1150,59 @@
 
     /* Portfolio */
     .portfolioSection {
-        padding: 60px 0;
+        padding: 72px 0;
     }
 
-    .portfolioGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .portfolioTitle {
-        font-size: 28px;
-        line-height: 36px;
+    .portfolioHeader {
+        flex-direction: column;
+        gap: 24px;
     }
 
     .filterTabs {
-        gap: 4px;
+        justify-content: flex-start;
     }
 
-    .filterTab {
-        padding: 6px 14px;
-        font-size: 13px;
+    .portfolioGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolioTitle {
+        font-size: 30px;
+        line-height: 38px;
     }
 
     /* Industries */
     .industriesSection {
-        padding: 60px 0;
+        padding: 72px 0;
     }
 
     .industriesTitle {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 34px;
+        line-height: 42px;
     }
 
     .industriesGrid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .industriesGlow {
-        width: 300px;
-    }
 }
 
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 400px) {
+
+    /* Banner */
     .banner {
-        min-height: 560px;
+        min-height: 480px;
+        margin-top: 64px;
     }
 
     .bannerTitle {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 28px;
+        line-height: 36px;
     }
 
     .bannerSubtitle {
-        font-size: 13px;
-        letter-spacing: 1.2px;
+        font-size: 12px;
+        letter-spacing: 1px;
     }
 
     .bannerDescription {
@@ -1238,7 +1226,25 @@
 
     /* Portfolio */
     .portfolioSection {
-        padding: 40px 0;
+        padding: 48px 0;
+    }
+
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolioTitle {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .filterTabs {
+        gap: 4px;
+    }
+
+    .filterTab {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 
     .cardImageWrapper {
@@ -1246,7 +1252,8 @@
     }
 
     .cardTitle {
-        font-size: 18px;
+        font-size: 17px;
+        line-height: 24px;
     }
 
     .viewMoreBtn {
@@ -1256,19 +1263,26 @@
 
     /* Industries */
     .industriesSection {
-        padding: 40px 0;
+        padding: 48px 0;
     }
 
     .industriesTitle {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 26px;
+        line-height: 34px;
     }
 
     .industriesDescription {
         font-size: 14px;
+        line-height: 22px;
     }
 
     .industriesGrid {
         grid-template-columns: 1fr;
     }
+
+    .industryCard {
+        min-height: auto;
+        padding: 24px;
+    }
 }
+

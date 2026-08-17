@@ -6,13 +6,7 @@ const services = [
     id: "epcSolutions",
     icon: "/images/Servicepage/Solar_Epc.png",
     title: "Solar EPC Solutions",
-    description: (
-      <>
-        End-to-end design, engineering, procurement, installation, testing
-        <br />
-        and commissioning for utility-scale projects.
-      </>
-    ),
+    description: "End-to-end design, engineering, procurement, installation, testing and commissioning for utility-scale projects.",
     list: ["Site Assessment & Feasibility", "Custom Component Selection", "Regulatory Approvals"],
     image: "/images/Servicepage/service_grid.jpg",
     imageAlt: "Solar EPC Solutions – aerial view of a utility-scale solar farm",
@@ -22,67 +16,31 @@ const services = [
     id: "onGrid",
     icon: "/images/Servicepage/grid.png",
     title: "On-Grid Solar Systems",
-    description: (
-      <>
-        Optimized for homes, commercial buildings,
-        <br />
-        and industries to reduce monthly electricity
-        <br />
-        bills efficiently.
-      </>
-    ),
+    description: "Optimized for homes, commercial buildings, and industries to reduce monthly electricity bills efficiently.",
   },
   {
     id: "offGrid",
     icon: "/images/Servicepage/off_grid.png",
     title: "Off-Grid Solar Systems",
-    description: (
-      <>
-        Reliable battery backup solutions designed
-        <br />
-        for remote locations without grid access.
-      </>
-    ),
+    description: "Reliable battery backup solutions designed for remote locations without grid access.",
   },
   {
     id: "hybrid",
     icon: "/images/Servicepage/hybrid_solar.png",
     title: "Hybrid Solar Systems",
-    description: (
-      <>
-        Combining panels, storage, and grid
-        <br />
-        connectivity for continuous, uninterrupted
-        <br />
-        power.
-      </>
-    ),
+    description: "Combining panels, storage, and grid connectivity for continuous, uninterrupted power.",
   },
   {
     id: "ess",
     icon: "/images/Servicepage/thunder.png",
     title: "Energy Storage (ESS)",
-    description: (
-      <>
-        Advanced battery storage units for peak
-        <br />
-        shaving and backup in residential and
-        <br />
-        industrial use.
-      </>
-    ),
+    description: "Advanced battery storage units for peak shaving and backup in residential and industrial use.",
   },
   {
     id: "commercial",
     icon: "/images/Servicepage/indus.png",
     title: "Commercial & Industrial",
-    description: (
-      <>
-        Custom solar solutions for factories, warehouses, hospitals, and
-        <br />
-        malls to maximize ROI.
-      </>
-    ),
+    description: "Custom solar solutions for factories, warehouses, hospitals, and malls to maximize ROI.",
     image: "/images/Servicepage/comm_ind.jpg",
     imageAlt: "Commercial & Industrial solar installation on a large facility roof",
   },
@@ -90,27 +48,13 @@ const services = [
     id: "residential",
     icon: "/images/Servicepage/home.png",
     title: "Residential Solar",
-    description: (
-      <>
-        Premium systems specifically designed for
-        <br />
-        individual homes and luxury estates.
-      </>
-    ),
+    description: "Premium systems specifically designed for individual homes and luxury estates.",
   },
   {
     id: "carport",
     icon: "/images/Servicepage/solar_carport.png",
     title: "Solar Carport",
-    description: (
-      <>
-        Dual-purpose structures for residential and
-        <br />
-        commercial parking spaces, providing shade
-        <br />
-        and power.
-      </>
-    ),
+    description: "Dual-purpose structures for residential and commercial parking spaces, providing shade and power.",
   },
 ];
 
@@ -122,9 +66,7 @@ export default function CoreServices() {
           <div className={styles.headerTextGroup}>
             <p className={styles.sectionHeader}>ENGINEERING PRECISION</p>
             <p className={styles.sectionDescription}>
-              We provide a spectrum of solar energy solutions tailored to meet the energy demands of
-              <br />
-              modern infrastructure.
+              We provide a spectrum of solar energy solutions tailored to meet the energy demands of modern infrastructure.
             </p>
           </div>
           <div className={styles.headerDivider}></div>
@@ -167,7 +109,7 @@ export default function CoreServices() {
                     </div>
 
                     <h3 className={styles.cardTitle}>{service.title}</h3>
-                    <p className={styles.cardDescription}>{service.description}</p>
+                    <p className={styles.cardDescription}>{service.description as string}</p>
 
                     {/* Feature list (EPC only) */}
                     {service.list && (
@@ -189,7 +131,7 @@ export default function CoreServices() {
               </div>
             );
           })}
-  x        </div>
+        </div>
       </div>
     </section>
   );

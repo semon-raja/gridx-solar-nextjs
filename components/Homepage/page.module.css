@@ -33,12 +33,15 @@
     z-index: 999999 !important;
     transform: translateZ(0);
 
-    background: rgba(19, 19, 19, 0.949); /* #131313F2 */
+    background: rgba(19, 19, 19, 0.949);
+    /* #131313F2 */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(81, 69, 50, 0.2); /* #51453233 */
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05); /* #0000000D */
+    border-bottom: 1px solid rgba(81, 69, 50, 0.2);
+    /* #51453233 */
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    /* #0000000D */
 }
 
 .navbar_logo {
@@ -1497,12 +1500,6 @@
 /* ============================================================
    RESPONSIVE 
    ============================================================ */
-@media (max-width: 1280px) {
-    .statsStrip {
-        width: calc(100% - 96px);
-    }
-}
-
 
 @media (max-width: 1024px) {
 
@@ -1974,5 +1971,432 @@
     .footerColumn h4 {
         font-size: 16px;
         margin-bottom: 16px;
+    }
+}
+
+/* ============================================================
+   CONSOLIDATED RESPONSIVE FIXES
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    /* ── Shared Container ── */
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+        height: 72px;
+    }
+
+    .navbar_links {
+        display: none;
+    }
+
+    .poweredBy {
+        display: none;
+    }
+
+    .navbar_contactButton {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        height: 620px;
+        padding-bottom: 0;
+    }
+
+    .hero .container {
+        padding-top: 160px;
+    }
+
+    .heroTitle {
+        font-size: 48px;
+        line-height: 56px;
+    }
+
+    .heroDescription {
+        font-size: 17px;
+        max-width: 100%;
+    }
+
+    /* ── Stats ── */
+    .statsSection {
+        margin-top: 0;
+    }
+
+    .statsStrip {
+        width: calc(100% - 48px);
+        border-radius: 12px;
+    }
+
+    /* ── About ── */
+    .aboutSection {
+        padding: 60px 0 80px;
+    }
+
+    .netZeroCard {
+        top: unset;
+        left: unset;
+        bottom: -20px;
+        right: -10px;
+    }
+
+    /* ── Solutions ── */
+    .headingRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .solarCardContent {
+        padding: 44px 24px 14px 32px;
+    }
+
+    .solarCardOverlay {
+        padding: 0 32px;
+    }
+
+    /* appCard: break out of absolute positioning */
+    .appCard {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        padding: 40px 32px;
+        height: auto;
+    }
+
+    .phoneWrapper {
+        position: relative;
+        top: unset;
+        left: unset;
+        width: auto;
+        height: auto;
+        align-self: center;
+    }
+
+    .appCardContent {
+        position: relative;
+        top: unset;
+        left: unset;
+        width: 100%;
+        height: auto;
+    }
+
+    /* ── Portfolio ── */
+    .portfolioTabs {
+        flex-wrap: wrap;
+    }
+
+    .projectCard {
+        width: 100%;
+    }
+
+    /* ── Footer ── */
+    .footerTop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 32px;
+        padding: 0 24px;
+    }
+
+    .newsletter input {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+
+    .newsletter {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+
+    /* ── Shared Container ── */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+        height: 64px;
+    }
+
+    .mobileMenu {
+        top: 64px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        height: 560px;
+    }
+
+    .hero .container {
+        padding-top: 120px;
+    }
+
+    .heroTitle {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .heroBadge {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .heroDescription {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 24px;
+    }
+
+    .heroButton {
+        height: 48px;
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    /* ── Stats ── */
+    .statsStrip {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .statValue {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .statLabel {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    /* ── About ── */
+    .aboutSection {
+        padding: 48px 0 60px;
+    }
+
+    .aboutImageBorder {
+        height: 220px;
+    }
+
+    .aboutTitle {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .aboutLabel {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .aboutBody p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .aboutBadges {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    /* ── Solutions ── */
+    .solutions {
+        padding: 48px 0;
+    }
+
+    .solutionsTitle {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .solutionsBadge {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .solarCard,
+    .residentialCard {
+        height: 180px;
+    }
+
+    .hybridCard {
+        min-height: 240px;
+        padding: 24px 20px 32px;
+    }
+
+    .appCard {
+        padding: 24px 20px;
+        gap: 20px;
+    }
+
+    .appCardTitle {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .appCardDescription {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .phoneWrapper img {
+        width: 120px !important;
+        height: auto !important;
+    }
+
+    /* ── Starc Energy ── */
+    .starcCard {
+        padding: 40px 20px;
+        gap: 32px;
+    }
+
+    .starcTitle {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .starcDescription {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .starcButton {
+        margin-top: 24px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ── Portfolio ── */
+    .portfolioSection {
+        padding: 48px 0;
+    }
+
+    .portfolioTitle {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .portfolioLabel {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .portfolioTabs {
+        gap: 6px;
+    }
+
+    .tab,
+    .activeTab {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .projectImage {
+        height: 240px;
+    }
+
+    /* ── Featured Projects ── */
+    .featuredProjects {
+        padding: 60px 0;
+    }
+
+    .sectionTag {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .sectionTitle {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .featuredCard {
+        padding: 24px;
+    }
+
+    .featuredCard h3 {
+        font-size: 17px;
+        line-height: 24px;
+    }
+
+    /* ── Milestones ── */
+    .milestones {
+        padding: 32px 0;
+    }
+
+    .milestoneItem span {
+        font-size: 12px;
+        letter-spacing: 0.8px;
+    }
+
+    /* ── Achievements ── */
+    .achievements {
+        padding: 60px 0;
+    }
+
+    .achievementCard {
+        padding: 24px;
+        gap: 16px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+        padding: 48px 0 20px;
+    }
+
+    .footerTop {
+        padding: 0 20px;
+        gap: 32px;
+        grid-template-columns: 1fr;
+    }
+
+    .footerInfo p {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .footerColumn h4 {
+        font-size: 15px;
+    }
+
+    .footerColumn a,
+    .footerColumn p {
+        font-size: 14px;
+    }
+
+    .newsletter {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .newsletter input {
+        width: 100%;
+    }
+
+    .newsletter button {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .footerBottom {
+        margin-top: 32px;
+        font-size: 14px;
     }
 }

@@ -97,10 +97,10 @@ export default function Navbar() {
                 <div className={styles.mobileMenuLinks}>
                     <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
                     <Link href="/About" onClick={() => setMenuOpen(false)}>About</Link>
-                    <Link href="/" onClick={() => setMenuOpen(false)}>Services</Link>
-                    <Link href="/" onClick={() => setMenuOpen(false)}>Projects</Link>
-                    <Link href="/" onClick={() => setMenuOpen(false)}>Partners</Link>
-                    <Link href="/" onClick={() => setMenuOpen(false)}>News</Link>
+                    <Link href="/Services" onClick={() => setMenuOpen(false)}>Services</Link>
+                    <Link href="/Projects" onClick={() => setMenuOpen(false)}>Projects</Link>
+                    <Link href="/Partners" onClick={() => setMenuOpen(false)}>Partners</Link>
+                    <Link href="/News" onClick={() => setMenuOpen(false)}>News</Link>
                 </div>
 
                 
